@@ -16,7 +16,7 @@
     );
     
     const con = React.createElement('div',{id:"con"}, [heading, heading2]);
-    console.log(con);
+    console.log(con)
     // const root = ReactDOM.createRoot(document.getElementById("root"))
     // root.render(con)
 
