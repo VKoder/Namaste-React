@@ -1,11 +1,13 @@
 # ❤️ Namaste React 🙏
 
-### _[Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React).
+### [Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React).
 
 
+## 📚 [_Chapter 01 - Inception_](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2001%20-%20Inception) (Date: 10-11-2023)
 
-
-
+- 📘 [_Assignment_]()
+- 📖 [_Theory Assignment Solution_]()
+- 💻 [_Coding Assignment Solution_]()
 
 ---
 
