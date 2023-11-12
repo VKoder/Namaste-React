@@ -5,12 +5,19 @@
 
 ## 📚 [_Chapter 01 - Inception_](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2001%20-%20Inception) (Date: 10-11-2023)
 
-- 📘 [_Assignment_]()
-- 📖 [_Theory Assignment Solution_]()
-- 💻 [_Coding Assignment Solution_]()
+
+- 📖 [_Theory Assignment Solution_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2001%20-%20Inception/Theory/chap1Theory.md)
+- 💻 [_Code_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2001%20-%20Inception/Coding/App.js)
 
 ---
 
+## 📚 [_Chapter 02 - Igniting_our_App](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2002%20-%20Igniting%20our%20App) (Date: 10-11-2023)
+
+
+- 📖 [_Theory Assignment Solution_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2002%20-%20Igniting%20our%20App/Theory/chap2Theory.md)
+- 💻 [_Code_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2002%20-%20Igniting%20our%20App/Coding/App.js)
+
+---
 
 ## 🔰 Let's Connect:
 
