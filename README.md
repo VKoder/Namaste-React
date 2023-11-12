@@ -11,7 +11,7 @@
 
 ---
 
-## 📚 [Chapter 02 - Igniting our App](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2002%20-%20Igniting%20our%20App) (Date: 10-11-2023)
+## 📚 [Chapter 02 - Igniting our App](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2002%20-%20Igniting%20our%20App) (Date: 12-11-2023)
 
 
 - 📖 [_Theory Assignment Solution_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2002%20-%20Igniting%20our%20App/Theory/chap2Theory.md)
