@@ -3,6 +3,9 @@
     const head = React.createElement('h1', {}, "Namaste React in React")
 
 
+
+
+    
     //01
     const heading = React.createElement(
         'h1',
@@ -15,10 +18,12 @@
         "Namaste React from React2"
     );
     
-    const con = React.createElement('div',{id:"con"}, [heading, heading2]);
+    const con = React.createElement('div',{id:"con"}, heading);
     console.log(con)
     // const root = ReactDOM.createRoot(document.getElementById("root"))
     // root.render(con)
+
+
 
 
 
