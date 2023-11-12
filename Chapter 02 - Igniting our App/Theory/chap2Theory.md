@@ -76,7 +76,19 @@ A: `npx` is a tool that is used to execute the packages. It comes with the npm, 
     ```
 
 ## Q: What is difference between `dependencies` vs `devDependencies`?
-A: `Dependencies` 
+A: 
+## Dependencies:
+
+- **Purpose:** Dependencies are packages that are required for the application to run in a production environment. They are essential for the application's core functionality.
+
+- **Installation:** Dependencies are installed by default when someone installs your published package or when deploying your application.
+
+## devDependencies:
+
+- **Purpose:** devDependencies are packages that are only needed for development and testing purposes. They are not required for the actual execution of the application in a production environment.
+
+- **Installation:** devDependencies are typically installed when someone is setting up the development environment or running tests. They are not included when the application is being prepared for production.
+
 
 
 
