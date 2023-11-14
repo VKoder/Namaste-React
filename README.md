@@ -19,6 +19,15 @@
 
 ---
 
+## 📚 [Chapter 03 - Laying the foundation](https://github.com/VKoder/Namaste-React/tree/main/Chapter%2003%20-%20Laying%20the%20Foundation) (Date: 14-11-2023)
+
+
+- 📖 [_Theory Assignment Solution_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2003%20-%20Laying%20the%20Foundation/Theory/chap3Theory.md)
+- 📖 [_Coding Assignment Solution_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2003%20-%20Laying%20the%20Foundation/Coding/Readme.md)
+- 💻 [_Code_](https://github.com/VKoder/Namaste-React/blob/main/Chapter%2003%20-%20Laying%20the%20Foundation/Coding/Assignment1.js)
+
+---
+
 ## 🔰 Let's Connect:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vivek-khule-237682250/)
