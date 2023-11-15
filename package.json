@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "This is Namaste React by Akshay Saini Chapter 2 - Igniting our App",
   "scripts": {
-    "start": "parcel \"Chapter 03 - Laying the Foundation/Coding/index.html\"",
-    "build": "parcel build \"Chapter 03 - Laying the Foundation/Coding/index.html\"",
+    "start": "parcel \"Chapter 04 - Talk is Cheap Show me the code/Coding/index.html\"",
+    "build": "parcel build \"Chapter 04 - Talk is Cheap Show me the code/Coding/index.html\"",
     "test": "jest"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VKoder/Namaste-React.git"
