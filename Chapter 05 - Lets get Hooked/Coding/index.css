@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color:  #333333; */
+}
+.app {
+  /* background-color: #f0f0f0; */
+  /* background-color: #F4F4F4 ; */
+  background-color: #e3e2e2;
+  /* background-color: #F7F7F7 ; */
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.header {
+  height: 6vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 2vw 4.5vw;
+  /* background-color: #F95700 ; */
+  background-color: #F48C06;
+  /* background-color: #ff4d4f; */
+  /* background-color:  #FFC107; */
+}
+.hleft img {
+  width: 10vw;
+  border-radius: 1vw;
+  padding: 2vw 0;
+}
+.hright,
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.hright li {
+  padding-right: 4vw;
+  font-size: 1vw;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#hr1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hr2 i {
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+/* <div className="search">
+      <input type="text" placeholder="Feeling Hungry?" id="searchInp"></input>
+      <button id="searchBtn">Search</button>
+    </div> */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3vw;
+  width: 100%;
+}
+#searchInp {
+  padding: 1vw 0vw;
+  padding-right: 10vw;
+  padding-left: 2vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 1.2vw;
+}
+#searchBtn {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 1.4vw;
+  font-weight: 520;
+  background-color: #8ab833;
+  cursor: pointer;
+  /* background-color: #4CAF50  */
+}
+
+#e2 h2 {
+  font-size: 4.5vw;
+}
+#e2 p {
+  font-size: 1.5vw;
+  padding: 5px 0;
+}
+#e2 i {
+  font-size: 2vw;
+}
+
+.restraunt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw 10vw;
+  gap: 4vw;
+  flex-wrap: wrap;
+}
+
+.ele .date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 1vw;
+}
+.date i {
+  font-size: 1.2vw;
+  padding-right: 7px;
+}
+
+.ele {
+  background-color: rgb(255, 255, 255);
+  /* max-width: 280px;
+  max-height: 320px; */
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 1vw;
+  transition: .4s ease;
+}
+.eleimg {
+  /* background-color: rgb(9, 71, 79); */
+  width: 100%;
+  height: 40%;
+  object-fit: scale-down;
+  display: flex;
+  justify-content: center;
+  padding: 1vw;
+}
+.eleimg img {
+  width: 280px;
+  height: 200px;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+.eleinner {
+  /* background-color: rgb(121, 121, 121); */
+  width: 100%;
+  height: 40%;
+  object-fit: fill;
+  padding: 2vw 1.2vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ele:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.date h5 span {
+  color: rgb(237, 76, 76);
+  padding-right: 0.1vw;
+  font-size: 1vw;
+}
+.eleinner h5 {
+  transition: 0.5s;
+  font-size: 12px;
+}
+.eleinner h5:hover {
+  color: rgb(237, 76, 76);
+}
+
+.eleinner h3 {
+  padding-bottom: 0.5vw;
+  letter-spacing: 0.5px;
+  transition: ease-in 0.6s;
+}
+
+.eleinner p {
+  padding-bottom: 0.7vw;
+  font-size: 1vw;
+}
+.date #tag {
+  background-color: rgb(0, 212, 21);
+  padding: 0.2vw 0;
+  padding-left: 0.4vw;
+  padding-right: 0.7vw;
+  border-radius: 5px;
+  color: white;
+}
+.date #tag i {
+  color: white;
+  z-index: 1;
+}
+#rm,
+i {
+  opacity: 0.8;
+  font-size: 1vw;
+}
+.footer {
+  text-align: center;
+  padding: 1.2vw 0;
+  background-color: rgb(237, 76, 76);
+  color: white;
+  letter-spacing: 3px;
+  font-size: 1.5vw;
+}
+
+@media (max-width: 800px) {
+  .header {
+    height: 15vw;
+    padding: 0 4.5vw;
+  }
+  .hleft img {
+    width: 20vw;
+    border-radius: 2vw;
+  }
+  .hright li {
+    display: none;
+  }
+  #hr2 i {
+    font-size: 6vw;
+  }
+  .hero {
+    margin-top: 4vw;
+  }
+  .restraunt {
+    margin-top: 3vw;
+    gap: 4vw;
+  }
+  #searchInp {
+    padding: 3vw 0vw;
+    padding-right: 20vw;
+    padding-left: 5vw;
+    border: none;
+    border-radius: 5vw;
+    font-size: 3vw;
+  }
+  #searchBtn {
+    padding: 3vw 4vw;
+    border: none;
+    border-radius: 5vw;
+    font-size: 3vw;
+  }
+  .ele {
+    width: 300px;
+  }
+  .eleinner p {
+    font-size: 2vw;
+  }
+  #rm,
+  i {
+    opacity: 0.8;
+    font-size: 1.4vw;
+  }
+  .date i {
+    font-size: 2vw;
+    padding-right: 5px;
+  }
+  .date {
+    margin: 10px 0;
+  }
+  .header {
+    background-color: #f48c06;
+  }
+  .footer {
+    text-align: center;
+    padding: 1.5vw 0;
+    background-color: rgb(237, 76, 76);
+    color: white;
+    letter-spacing: 2.6px;
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    height: 20vw;
+    padding: 0 4.5vw;
+  }
+  .hleft img {
+    width: 30vw;
+    border-radius: 2vw;
+  }
+  .hright li {
+    display: none;
+  }
+  #hr2 i {
+    font-size: 8vw;
+  }
+
+  .ele {
+    width: 300px;
+    border-radius: 4vw;
+  }
+  .eleinner h3 {
+    font-size: 4.8vw;
+  }
+  .eleinner {
+    padding: 3.5vw;
+  }
+  .eleinner p {
+    padding-top: 5px;
+    font-size: 3vw;
+    letter-spacing: 0.8px;
+  }
+  #rm,
+  i {
+    opacity: 0.6;
+    font-size: 3vw;
+  }
+  .date i {
+    font-size: 4vw;
+    padding-right: 7px;
+  }
+  .date {
+    margin: 10px 0;
+  }
+  .eleimg {
+    padding: 2vw;
+  }
+
+  .date #tag {
+    padding: 0.9vw 0;
+    padding-left: 2.2vw;
+    padding-right: 4vw;
+    border-radius: 5px;
+  }
+  #rm,
+  i {
+    font-size: 3vw;
+  }
+
+  #searchInp {
+    letter-spacing: 1px;
+  }
+  .footer {
+    text-align: center;
+    padding: 1.2vw 0;
+    background-color: rgb(237, 76, 76);
+    color: white;
+    letter-spacing: 2.1px;
+    font-size: 3.5vw;
+  }
+}
