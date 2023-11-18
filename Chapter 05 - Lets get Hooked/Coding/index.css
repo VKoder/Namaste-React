@@ -132,7 +132,7 @@ ul {
   justify-content: space-between;
   flex-direction: column;
   gap: 1vw;
-  transition: .4s ease;
+  transition: .2s ease;
 }
 .eleimg {
   /* background-color: rgb(9, 71, 79); */
@@ -162,7 +162,7 @@ ul {
 }
 
 .ele:hover {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  scale: 1.05;
 }
 
 .date h5 span {
