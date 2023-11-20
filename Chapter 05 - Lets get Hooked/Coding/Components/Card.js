@@ -6,7 +6,7 @@ const Card = (props) => {
   // console.log(resData);
   const { name, cuisines, avgRating, cloudinaryImageId, costForTwo, areaName } =
     resData.info;
-  const { header } = resData.info.aggregatedDiscountInfoV3;
+  // const { header } = resData.info.aggregatedDiscountInfoV2;
   const { slaString } = resData.info.sla;
   return (
     <div className="ele">
@@ -15,9 +15,12 @@ const Card = (props) => {
       </div>
       <div class="eleinner">
         <h3>{name}</h3>
-        <p style={{ letterSpacing: "0.2px" }}>{cuisines.join(", ")}</p>
+        <p>
+  {cuisines.join(", ")}
+</p>
+
         <div className="date">
-          <h5 id="tag" style={avgRating > 4 ? { backgroundColor: "rgb(0, 212, 21)" } : { backgroundColor: "red" }}>
+          <h5 id="tag" style={avgRating >= 4 ? { backgroundColor: "rgb(0, 212, 21)" } : { backgroundColor: "red" }}>
             <span>
               <i class="ri-star-fill"></i>
             </span>
@@ -27,7 +30,8 @@ const Card = (props) => {
             <span>
               <i class="ri-star-fill"></i>
             </span>
-            {header}
+            {/* {header} */}
+            {costForTwo}
           </h5>
           <h5>
             <span>

@@ -56,10 +56,6 @@ ul {
   cursor: pointer;
 }
 
-/* <div className="search">
-      <input type="text" placeholder="Feeling Hungry?" id="searchInp"></input>
-      <button id="searchBtn">Search</button>
-    </div> */
 
 .hero {
   display: flex;
@@ -125,7 +121,7 @@ ul {
   /* max-width: 280px;
   max-height: 320px; */
   width: 300px;
-  height: 350px;
+  height: 380px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -205,6 +201,152 @@ i {
   opacity: 0.8;
   font-size: 1vw;
 }
+
+
+/* SHIMMER UI */
+.Shimmer-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3vw;
+  width: 100%;
+  min-height: 100vh;
+}
+.Shimmer-search{
+  padding: 1vw 0vw;
+  padding-right: 10vw;
+  padding-left: 2vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 1.2vw;
+}
+#shimmer-btn {
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 1.4vw;
+  font-weight: 520;
+  background-color: #bebebe;
+  cursor: pointer;
+  /* background-color: #4CAF50  */
+}
+
+.shimmer-card{
+  background-color: #ffffff;
+  /* max-width: 280px;
+  max-height: 320px; */
+  width: 300px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3vw;
+  padding: 1vw;
+}
+.Shimmer-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw 10vw;
+  gap: 4vw;
+  flex-wrap: wrap;
+
+}
+.shimmer-img {
+  background-color: #bebebe;
+  width: 100%;
+  height: 60%;
+  object-fit: scale-down;
+  display: flex;
+  justify-content: center;
+  padding: 1vw;
+  border-radius: 10px;
+}
+.shimmer-inner{
+  height:40%;
+  width: 100%;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  flex-direction: column;
+}
+/*Animation to Shimmer Component Cards */
+.stroke {
+  height: 380px;
+  background: #d6d6d6;
+}
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+.h3{
+  width: 50%;
+  height: 22px;
+  border-radius: 15px;
+  background-color: #bebebe;
+}
+.h2{
+  width: 100%;
+  background-color: #bebebe;
+  border-radius: 15px;
+  height: 18px;
+}
+.h1main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+}
+.h1left{
+  width: 30%;
+  background-color: #bebebe;
+  border-radius: 15px;
+  height: 18px;
+}
+.h1mid{
+  width: 30%;
+  background-color: #bebebe;
+  border-radius: 15px;
+  height: 18px;
+}
+.h1right{
+  width: 30%;
+  background-color: #bebebe;
+  border-radius: 15px;
+  height: 18px;
+}
+.h4{
+  width: 50%;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #bebebe;
+}
+
+
+
+
+
+
+
+
+
 .footer {
   text-align: center;
   padding: 1.2vw 0;
