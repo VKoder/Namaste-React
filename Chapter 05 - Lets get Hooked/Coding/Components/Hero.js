@@ -42,7 +42,7 @@ const Hero = () => {
             rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
           );
           if (filterSearch.length === 0) {
-            setfilteredRestList("")
+            
           }
           else{
             setfilteredRestList(filterSearch)

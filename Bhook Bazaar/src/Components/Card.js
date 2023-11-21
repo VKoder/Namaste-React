@@ -15,7 +15,8 @@ const Card = (props) => {
       </div>
       <div class="eleinner">
         <h3>{name}</h3>
-        <p>{cuisines.join(", ")}</p>
+        <p>{[cuisines[0], cuisines[1]].join(", ")}</p>
+
 
         <div className="date">
           <h5
