@@ -1,4 +1,4 @@
-import CARD_IMG_URL from "../Utils/constants";
+import {CARD_IMG_URL} from "../Utils/constants";
 const Carousal = (props)=>{
     const { restData } = props;
     return (

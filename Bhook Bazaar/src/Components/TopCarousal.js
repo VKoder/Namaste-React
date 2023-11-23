@@ -13,7 +13,7 @@ const TopCarousal = () => {
     });
   };
 
-  const [carausaldata, setcarausaldata] = useState([]);
+  const [carausaldata, setcarausaldata] = useState(null);
   const [carausal2data, setcarausal2data] = useState([]);
 
 
@@ -22,7 +22,7 @@ const TopCarousal = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4529322&lng=73.86523799999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
     const json2 = await data2.json();
-    console.log(json2)
+    // console.log(json2)
     setcarausal2data(json2?.data?.cards[0]?.card?.card?.imageGridCards?.info);
     
   };
@@ -30,7 +30,7 @@ const TopCarousal = () => {
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4529322&lng=73.86523799999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     setcarausaldata(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
   };
 
@@ -42,9 +42,9 @@ const TopCarousal = () => {
     fetchData2();
   }, []);
 
-//   if (carausaldata.length === 0) {
-//     return <ShimmerCarousal />;
-//   }
+  if (carausaldata === null) {
+    return <ShimmerCarousal />;
+  }
 
   return (
     <div className="slider" ref={sliderRef}>

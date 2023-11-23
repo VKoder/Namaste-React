@@ -1,6 +1,7 @@
 import logo from "../Images/Logo.png";
 import { useState } from "react";
 import { day, night } from "./icon";
+import { Link } from "react-router-dom";
 
 // HEADER COMPONENT
 const Header = () => {
@@ -16,9 +17,9 @@ const Header = () => {
     <div className="hright">
       <div id="hr1">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Support</li>
+          <li>{<Link to="/">Home</Link>}</li>
+          <li>{<Link to="/about">About</Link>}</li>
+          <li>{<Link to="/contact">Support</Link>}</li>
         </ul>
       </div>
       <div id="hr2">

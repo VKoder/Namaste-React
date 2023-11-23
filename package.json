@@ -7,7 +7,6 @@
     "build": "parcel build \"index.html\"",
     "test": "jest"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VKoder/Namaste-React.git"
@@ -25,13 +24,14 @@
   "homepage": "https://github.com/VKoder/Namaste-React#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
     "parcel": "^2.10.2",
     "process": "^0.11.10"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
 }

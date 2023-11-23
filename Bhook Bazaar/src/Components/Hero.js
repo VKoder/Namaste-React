@@ -2,17 +2,17 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 // import { restrauntData } from "../Utils/mockData";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 // HERO COMPONENT
 const Hero = () => {
-  const [restrauntList, setrestrauntList] = useState([]);
+  const [restrauntList, setrestrauntList] = useState(null);
   const [filteredRestList, setfilteredRestList] = useState([]);
 
   const [searchTxt, setsearchTxt] = useState("");
 
   useEffect(() => {
     fetchData();
-
   }, []);
 
   const fetchData = async () => {
@@ -26,13 +26,13 @@ const Hero = () => {
     setrestrauntList(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log("Api is called");
+    
     setfilteredRestList(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
-  if (filteredRestList.length === 0) {
+  // console.log(filteredRestList);
+  if (restrauntList === null) {
     return <ShimmerUI />;
   }
 
@@ -66,7 +66,9 @@ const Hero = () => {
       <div className="restraunt">
         {
           filteredRestList.map((resItem) => (
+            <Link to={'/restaurant/' + resItem.info.id} key={resItem.info.id}>
             <Card resData={resItem} />
+            </Link>
           )) // Iteratedly store restraunt Obj into resData which is a parameter of card!
         }
       </div>

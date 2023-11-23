@@ -1,4 +1,4 @@
-import CARD_IMG_URL from "../Utils/constants";
+import {CARD_IMG_URL} from "../Utils/constants";
 
 // RESTRAUNT CARD COMPONENT
 const Card = (props) => {
