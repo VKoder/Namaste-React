@@ -4,23 +4,21 @@ import ShimmerUI from "./ShimmerCard";
 import { useParams } from "react-router-dom";
 import { REST_MENU_API } from "../Utils/constants";
 
-
 const RestaurantMenu = () => {
-
   //UseState to hold and update data
   const [restInfo, setrestInfo] = useState(null);
   const [restMenu, setrestMenu] = useState(null);
-
+  const [NewrestMenu, setNewrestMenu] = useState(null);
+  const [restMenuTitle, setrestMenuTitle] = useState(null);
+  const [veg, setveg] = useState("Veg");
 
   //UseParams to fetch dynamic from router child
   const { id } = useParams();
-
 
   //useEffect() to fetch the API after component will load
   useEffect(() => {
     fetchData();
   }, []);
-
 
   //ASYNC (CB Func) to fetch the data
   const fetchData = async () => {
@@ -30,11 +28,15 @@ const RestaurantMenu = () => {
       json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
         ?.card?.itemCards
     );
-    console.log(  json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card?.itemCards)
+    setNewrestMenu(
+      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+        ?.card?.itemCards
+    );
+    setrestMenuTitle(
+      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+        ?.card
+    );
     setrestInfo(json?.data?.cards[0]?.card?.card?.info);
-    // console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-    //     ?.card);
   };
 
   //Have to do this before destructing the data (we dont kn how much time it take to fetch so it will return.. is not defined)
@@ -46,8 +48,9 @@ const RestaurantMenu = () => {
   const { name, cuisines, avgRating, costForTwoMessage, cloudinaryImageId } =
     restInfo;
   const { deliveryTime } = restInfo.sla;
-  
-  // console.log(itemCards);
+  const { title } = restMenuTitle;
+
+  console.log(restMenu);
 
   return (
     <div className="rest-menu">
@@ -76,25 +79,45 @@ const RestaurantMenu = () => {
           </div>
         </div>
       </div>
-            
-    <div className="mid-menu">
-        <button  id="isVegBtn" onClick={()=>{
-            const filteredRestMenu = restMenu.filter((rest)=> rest.card.info.isVeg > 0);
-            setrestMenu(filteredRestMenu)
-        }}>
-            {/* {console.log(restMenu)} */}
-            Veg
+
+      <div className="mid-menu">
+        <button
+          id="isVegBtn"
+          onClick={() => {
+            if (veg === "Veg") {
+              setveg("All");
+            } else {
+              setveg("Veg");
+            }
+           
+
+            if (veg === "All") {
+              setrestMenu(NewrestMenu);
+              console.log("rest");
+            } else {
+              const filteredRestMenu = restMenu.filter(
+                (rest) => rest.card.info.isVeg > 0
+              );
+              setrestMenu(filteredRestMenu);
+              console.log("filterd");
+            }
+          }}
+          style={{ backgroundColor: veg === "Veg" ? "green" : "grey" }}
+        >
+          {veg}
         </button>
-    </div>
-    {/* {console.log(itemCards)} */}
+      </div>
+
       <li>
         <div className="main-menu">
-          {/* <h1>{title}</h1> */}
-          <p style={{ marginBottom: "2vw" }}>{restMenu.length + " Items"}</p>
+          <h1>
+            {title}
+            <span>({restMenu?.length})</span>
+          </h1>
 
-        {/* Iterating the recommended list/array of objs */}
-        
-          {restMenu.map((rest) => (
+          {/* Iterating the recommended list/array of objs */}
+
+          {restMenu?.map((rest) => (
             <div key={rest.card.info.id} className="menu-card">
               <div className="menu-left">
                 <h3>{rest.card.info.name}</h3>

@@ -11,9 +11,12 @@ const Hero = () => {
 
   const [searchTxt, setsearchTxt] = useState("");
 
+ 
   useEffect(() => {
     fetchData();
   }, []);
+
+ 
 
   const fetchData = async () => {
     
@@ -31,11 +34,14 @@ const Hero = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  // console.log(filteredRestList);
+
+
   if (restrauntList === null) {
     return <ShimmerUI />;
-  }
+  } 
+  
 
+ 
   return (
     <div className="hero">
       <div className="search">
@@ -54,7 +60,7 @@ const Hero = () => {
             let filterSearch = restrauntList.filter((rest) =>
               rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
             );
-            if (filterSearch.length === 0) {
+            if (filterSearch?.length === 0) {
             } else {
               setfilteredRestList(filterSearch);
             }
@@ -65,7 +71,7 @@ const Hero = () => {
       </div>
       <div className="restraunt">
         {
-          filteredRestList.map((resItem) => (
+          filteredRestList?.map((resItem) => (
             <Link to={'/restaurant/' + resItem.info.id} key={resItem.info.id}>
             <Card resData={resItem} />
             </Link>

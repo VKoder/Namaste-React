@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", "Lato", Calibri, sans-serif;
   /* color:  #333333; */
 }
 .app {
@@ -707,8 +708,23 @@ i {
   flex-direction: column;
   width: 100%;
 }
+.main-menu h1{
+  font-size: 20px;
+  margin-bottom: 1.5vw;
+  font-weight: 1000;
+}
 .mid-menu{
   background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2vw 18vw;
+}
+.mid-menu button{
+  padding: 4px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 800;
 }
 .menu-card{
   background-color: #fff;
@@ -723,19 +739,32 @@ i {
   width: 65%;
 }
 .menu-left h3{
-  opacity: 0.8;
-  font-size: 18px;
+  color: #353535;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.25px;
+  word-spacing: 2px;
+}
+.mid-menu button{
+  color: white;
+  border: none;
+  outline: none;
 }
 .menu-left p:nth-child(2){
   padding-bottom: 2vw;
   padding-top: 0.5vw;
   font-size: 14px;
-  opacity: 0.9;
+  color: #353535;
+  line-height: 25px;
+  letter-spacing: 0.1px;
+  word-spacing: 2px;
 }
 .menu-left p:nth-child(3){
-  font-size: 15px;
-  opacity: 0.5;
-  line-height: 25px;
+  font-size: 14px;
+  color: #8d8d8d;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  word-spacing: 2px;
 }
 .menu-right{
   height: 70%;
