@@ -3,14 +3,17 @@ import { CARD_IMG_URL } from "../Utils/constants";
 import ShimmerUI from "./ShimmerCard";
 import { useParams } from "react-router-dom";
 import { REST_MENU_API } from "../Utils/constants";
+import { CORS_API } from "../Utils/constants";
 
 const RestaurantMenu = () => {
   //UseState to hold and update data
+  console.log(useState())
   const [restInfo, setrestInfo] = useState(null);
   const [restMenu, setrestMenu] = useState(null);
   const [NewrestMenu, setNewrestMenu] = useState(null);
   const [restMenuTitle, setrestMenuTitle] = useState(null);
   const [veg, setveg] = useState("Veg");
+
 
   //UseParams to fetch dynamic from router child
   const { id } = useParams();
@@ -22,7 +25,7 @@ const RestaurantMenu = () => {
 
   //ASYNC (CB Func) to fetch the data
   const fetchData = async () => {
-    const data = await fetch(REST_MENU_API + id);
+    const data = await fetch( CORS_API + REST_MENU_API + id);
     const json = await data.json();
     setrestMenu(
       json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
@@ -95,7 +98,7 @@ const RestaurantMenu = () => {
               setrestMenu(NewrestMenu);
               console.log("rest");
             } else {
-              const filteredRestMenu = restMenu.filter(
+              const filteredRestMenu = restMenu?.filter(
                 (rest) => rest.card.info.isVeg > 0
               );
               setrestMenu(filteredRestMenu);

@@ -1,8 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import Carousal from "./Carousal";
 import ShimmerCarousal from "./ShimmerCarousal";
+import { REST_API } from "../Utils/constants";
+import { CORS_API } from "../Utils/constants";
 
 const TopCarousal = () => {
+  const [carausaldata, setcarausaldata] = useState(null);
+  const [carausal2data, setcarausal2data] = useState(null);
+
   const sliderRef = useRef(null);
 
   const scrollHandler = (scrollOffset) => {
@@ -13,36 +18,20 @@ const TopCarousal = () => {
     });
   };
 
-  const [carausaldata, setcarausaldata] = useState(null);
-  const [carausal2data, setcarausal2data] = useState([]);
-
-
-  const fetchData2 = async () => {
-    const data2 = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4529322&lng=73.86523799999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-    const json2 = await data2.json();
-    // console.log(json2)
-    setcarausal2data(json2?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-    
-  };
-
-  const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4529322&lng=73.86523799999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-    const json = await data.json();
-    // console.log(json);
-    setcarausaldata(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
-  };
-
- 
-//   console.log(carausal2data)
-
   useEffect(() => {
     fetchData();
-    fetchData2();
   }, []);
 
-  if (carausaldata === null) {
+  const fetchData = async () => {
+    const data = await fetch(
+      CORS_API + REST_API
+    );
+    const json = await data.json();
+    setcarausaldata(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+    setcarausal2data(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
+  };
+
+  if (carausaldata === null || carausal2data === null) {
     return <ShimmerCarousal />;
   }
 
@@ -54,14 +43,14 @@ const TopCarousal = () => {
       </div>
 
       <div className="slider__content">
-        {carausaldata.map((rest) => (
+        {carausaldata?.map((rest) => (
           <Carousal key={rest.id} restData={rest} />
         ))}
       </div>
       <div className="slider__content">
-        {
-            carausal2data.map((rest)=> <Carousal key={rest.id} restData={rest}/>)
-        }
+        {carausal2data?.map((rest) => (
+          <Carousal key={rest.id} restData={rest} />
+        ))}
       </div>
     </div>
   );
