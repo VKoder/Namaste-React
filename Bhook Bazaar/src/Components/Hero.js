@@ -4,6 +4,7 @@ import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
+import ShimmerCard from "./ShimmerCard";
 
 // HERO COMPONENT
 const Hero = () => {
@@ -16,7 +17,7 @@ const Hero = () => {
   useEffect(() => {
     console.log("fetching")
     fetchData();
-  },[restrauntList]);
+  },[]);
 
  
 
@@ -59,10 +60,7 @@ const Hero = () => {
             let filterSearch = restrauntList.filter((rest) =>
               rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
             );
-            if (filterSearch?.length === 0) {
-            } else {
-              setfilteredRestList(filterSearch);
-            }
+            setfilteredRestList(filterSearch);
           }}
         >
           Search

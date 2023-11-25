@@ -1,8 +1,7 @@
+import UserClass from "./UserClass";
 const About = () => {
     return (
-        <div className="about">
-            <h1>Heyy I am About</h1>
-        </div>
+        <UserClass name={"Vivek khule"} location={"Katraj, Pune"}/>
     )
 }
 export default About;
