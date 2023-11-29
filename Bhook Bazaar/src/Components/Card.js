@@ -3,10 +3,10 @@ import {CARD_IMG_URL} from "../Utils/constants";
 // RESTRAUNT CARD COMPONENT
 const Card = (props) => {
   const { resData } = props;
-  // console.log(resData);
+ 
   const { name, cuisines, avgRating, cloudinaryImageId, costForTwo, areaName } =
     resData.info;
-  // const { header } = resData.info.aggregatedDiscountInfoV2;
+  
   const { slaString } = resData.info.sla;
   return (
     <div className="ele">

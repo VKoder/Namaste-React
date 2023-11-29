@@ -10,8 +10,6 @@ import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 
-
-
 const AppLayout = () => (
   <div className="app">
     <Header />
@@ -26,15 +24,14 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
-      
       {
         path: "/",
         element: (
           <>
-        <TopCarousal/> 
-        <Hero />
-        </>
-        )
+            <TopCarousal />
+            <Hero />
+          </>
+        ),
       },
       {
         path: "/about",
