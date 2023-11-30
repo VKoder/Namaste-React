@@ -7,6 +7,7 @@ class UserClass extends React.Component {
     this.state = {
       count: 0,
     };
+    console.log("First")
     console.log("Child Component")
   }
 
