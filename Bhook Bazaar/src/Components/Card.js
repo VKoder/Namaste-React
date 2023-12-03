@@ -1,12 +1,12 @@
-import {CARD_IMG_URL} from "../Utils/constants";
+import { CARD_IMG_URL } from "../Utils/constants";
 
 // RESTRAUNT CARD COMPONENT
 const Card = (props) => {
   const { resData } = props;
- 
+
   const { name, cuisines, avgRating, cloudinaryImageId, costForTwo, areaName } =
     resData.info;
-  
+
   const { slaString } = resData.info.sla;
   return (
     <div className="ele">
@@ -16,7 +16,6 @@ const Card = (props) => {
       <div class="eleinner">
         <h3>{name}</h3>
         <p>{[cuisines[0], cuisines[1]].join(", ")}</p>
-
 
         <div className="date">
           <h5

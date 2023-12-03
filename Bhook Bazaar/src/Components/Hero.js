@@ -1,47 +1,33 @@
 import Card from "./Card";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
-import { REST_API } from "../Utils/constants";
-import { CORS_API } from "../Utils/constants";
-import ShimmerCard from "./ShimmerCard";
+import useRestaurantList from "../Utils/useRestaurantList";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
 // HERO COMPONENT
 const Hero = () => {
-  const [restrauntList, setrestrauntList] = useState(null);
+  const restaurantList = useRestaurantList();
+
   const [filteredRestList, setfilteredRestList] = useState(null);
 
   const [searchTxt, setsearchTxt] = useState("");
 
- 
+  const OnlineStatus = useOnlineStatus();
+
+  //once the restaurant list changes ie the data is fetched change FILTEREDLIST
   useEffect(() => {
-    console.log("fetching")
-    fetchData();
-  },[]);
+    setfilteredRestList(restaurantList);
+  }, [restaurantList]);
 
- 
+  if (OnlineStatus === false) {
+    return <h2>Your Offline</h2>;
+  }
 
-  const fetchData = async () => {
-  
-    const data = await fetch(
-      CORS_API + REST_API
-    );
-    const json = await data.json();
-
-    setrestrauntList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    
-    setfilteredRestList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
-
-  if (restrauntList === null) {
+  if (restaurantList === null) {
     return <ShimmerUI />;
-  } 
-   
+  }
+
   return (
     <div className="hero">
       <div className="search">
@@ -57,7 +43,7 @@ const Hero = () => {
         <button
           id="searchBtn"
           onClick={() => {
-            let filterSearch = restrauntList.filter((rest) =>
+            let filterSearch = restaurantList.filter((rest) =>
               rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
             );
             setfilteredRestList(filterSearch);
@@ -69,8 +55,8 @@ const Hero = () => {
       <div className="restraunt">
         {
           filteredRestList?.map((resItem) => (
-            <Link to={'/restaurant/' + resItem.info.id} key={resItem.info.id}>
-            <Card resData={resItem} />
+            <Link to={"/restaurant/" + resItem.info.id} key={resItem.info.id}>
+              <Card resData={resItem} />
             </Link>
           )) // Iteratedly store restraunt Obj into resData which is a parameter of card!
         }

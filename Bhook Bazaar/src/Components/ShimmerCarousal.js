@@ -3,7 +3,6 @@ const ShimmerCarousal = () =>{
         <div className="Shimmer-Carousal ">
             <div className="carausal-card stroke animate"></div>
             <div className="carausal-card stroke animate"></div>
-            {/* <div className="carausal-card stroke animate"></div> */}
         </div>
     )
 }

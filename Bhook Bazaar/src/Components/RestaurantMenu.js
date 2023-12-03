@@ -1,46 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CARD_IMG_URL } from "../Utils/constants";
 import ShimmerUI from "./ShimmerCard";
 import { useParams } from "react-router-dom";
-import { REST_MENU_API } from "../Utils/constants";
-import { CORS_API } from "../Utils/constants";
+import useRestaurantMenu from "../Utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  //UseState to hold and update data
-  console.log(useState())
-  const [restInfo, setrestInfo] = useState(null);
-  const [restMenu, setrestMenu] = useState(null);
-  const [NewrestMenu, setNewrestMenu] = useState(null);
-  const [restMenuTitle, setrestMenuTitle] = useState(null);
   const [veg, setveg] = useState("Veg");
-
 
   //UseParams to fetch dynamic from router child
   const { id } = useParams();
 
-  //useEffect() to fetch the API after component will load
-  useEffect(() => {
-    fetchData();
-  }, []);
 
-  //ASYNC (CB Func) to fetch the data
-  const fetchData = async () => {
-    const data = await fetch( CORS_API + REST_MENU_API + id);
-    const json = await data.json();
-    setrestMenu(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
-    setNewrestMenu(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
-    setrestMenuTitle(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card
-    );
-    setrestInfo(json?.data?.cards[0]?.card?.card?.info);
-  };
+  //CUSTOM HOOK TO FETCH THE ALL INFO OF THE Rest
+  const { restInfo, restMenu, restMenuTitle, NewrestMenu } =
+    useRestaurantMenu(id);
 
   //Have to do this before destructing the data (we dont kn how much time it take to fetch so it will return.. is not defined)
   if (restMenu === null) {
@@ -92,17 +65,14 @@ const RestaurantMenu = () => {
             } else {
               setveg("Veg");
             }
-           
 
             if (veg === "All") {
               setrestMenu(NewrestMenu);
-              console.log("rest");
             } else {
               const filteredRestMenu = restMenu?.filter(
                 (rest) => rest.card.info.isVeg > 0
               );
               setrestMenu(filteredRestMenu);
-              console.log("filterd");
             }
           }}
           style={{ backgroundColor: veg === "Veg" ? "green" : "grey" }}

@@ -25,13 +25,7 @@ const Header = () => {
       <div id="hr2">
         <i class="ri-shopping-cart-fill"></i>
       </div>
-      <div id="hr3">
-      <button onClick={() => {
-        login.props.className === day().props.className
-        ? setlogin(night)
-        : setlogin(day);
-        }}>{login}</button>
-      </div>
+      
     </div>
   </div>
   )

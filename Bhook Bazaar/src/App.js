@@ -1,14 +1,17 @@
-import React from "react";
+import React, { lazy , Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Footer from "./Components/Footer";
 import TopCarousal from "./Components/TopCarousal";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
+// import About from "./Components/About";
+// import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
+
+const About = lazy(() => {import("./Components/About")});
+const Contact = lazy(() => {import("./Components/Contact")});
 
 const AppLayout = () => (
   <div className="app">
@@ -35,11 +38,20 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          //Suspence is used to make react wait till our component is loading or mounting it takes fallback prop to display something eg: shimmer ui
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Contact/>
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:id",
