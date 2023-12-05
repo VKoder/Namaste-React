@@ -1,6 +1,5 @@
 import logo from "../Images/Logo.png";
 import { useState } from "react";
-import { day, night } from "./icon";
 import { Link } from "react-router-dom";
 
 // HEADER COMPONENT
@@ -10,14 +9,13 @@ const Header = () => {
 
 
   return (
-    <div className="header">
-    <div className="hleft">
-      <img src={logo}></img>
+    <div className="header shadow-md">
+    <div className="hleft w-20">
+    <Link to="/"><img src={logo}></img></Link>
     </div>
     <div className="hright">
       <div id="hr1">
         <ul>
-          <li>{<Link to="/">Home</Link>}</li>
           <li>{<Link to="/about">About</Link>}</li>
           <li>{<Link to="/contact">Support</Link>}</li>
         </ul>

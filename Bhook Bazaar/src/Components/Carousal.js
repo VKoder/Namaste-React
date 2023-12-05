@@ -1,5 +1,5 @@
 import { CARD_IMG_URL } from "../Utils/constants";
-const Carousal = (props) => {
+export  const Carousal1 = (props) => {
   const { restData } = props;
   return (
     <div className="slider__item">
@@ -11,4 +11,18 @@ const Carousal = (props) => {
     </div>
   );
 };
-export default Carousal;
+
+
+export  const Carousal2 = (props) => {
+  const { restData } = props;
+  return (
+    <div className="slider__item2">
+      <img
+        className="slider__image2"
+        src={CARD_IMG_URL + restData.imageId}
+        alt={restData.accessibility.altText}
+      />
+    </div>
+  );
+};
+

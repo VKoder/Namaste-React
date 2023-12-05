@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +15,7 @@
 .app {
   /* background-color: #f0f0f0; */
   /* background-color: #F4F4F4 ; */
-  background-color: #fff;
+  background-color:#fff;
   /* background-color: #F7F7F7 ; */
   min-height: 100vh;
   width: 100%;
@@ -24,12 +30,12 @@
   align-items: center;
   overflow: hidden;
   padding: 2vw 4.5vw;
-  background-color: #fff;
+  /* background-color: #fff; */
   /* background-color: #F95700 ; */
-  /* background-color: #F48C06; */
+  /* background-color: #F48C06 ; */
   /* background-color: #ff4d4f; */
   /* background-color:  #FFC107; */
-  box-shadow: 10px 0px 5px black;
+  /* box-shadow: 10px 0px 5px black; */
   /* position: fixed; */
   z-index: 1;
 }
@@ -95,7 +101,7 @@ ul {
   border-radius: 2vw;
   font-size: 1.4vw;
   font-weight: 520;
-  background-color: #8ab833;
+  background-color: #F48C06;
   cursor: pointer;
   /* background-color: #4CAF50  */
 }
@@ -115,7 +121,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5vw 10vw;
+  padding: 5vw 5vw;
   gap: 4vw;
   flex-wrap: wrap;
 }
@@ -136,7 +142,6 @@ ul {
 }
 
 .ele {
-  background-color: rgb(243, 243, 243);
   /* max-width: 280px;
   max-height: 320px; */
   width: 300px;
@@ -181,7 +186,7 @@ ul {
 }
 
 .date h5 span {
-  color: rgb(237, 76, 76);
+  color: #F48C06;
   padding-right: 0.1vw;
   font-size: 1vw;
 }
@@ -190,7 +195,7 @@ ul {
   font-size: 12px;
 }
 .eleinner h5:hover {
-  color: rgb(237, 76, 76);
+  color: #F48C06;
 }
 
 .eleinner h3 {
@@ -204,7 +209,7 @@ ul {
   font-size: 1vw;
 }
 .date #tag {
-  background-color: rgb(0, 212, 21);
+  background-color: rgb(84, 194, 0);
   padding: 0.2vw 0;
   padding-left: 0.4vw;
   padding-right: 0.7vw;
@@ -520,11 +525,13 @@ i {
 
 /* TOP CAROUSAL */
 .carausal-head h2 {
-  color: #923333;
-  font-weight: 600;
+  color: #000;
+  font-weight: 800;
+  font-size: 23px;
+  width:100%;
 }
 .slider {
-  width: 80%;
+  width: 92%;
   max-width: 1280px;
   margin: 0 auto;
   margin-top: 15px;
@@ -568,6 +575,7 @@ i {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
 .slider__nav {
@@ -612,8 +620,10 @@ i {
 }
 @media (min-width: 940px) {
   .slider__item {
-    min-width: calc((50% / 1) - 4rem);
+    min-width: calc((45% / 1) - 4rem);
   }
+  .slider__item2 {
+    min-width: calc((16% / 1) - 2rem);  }
 }
 /* CAROUSAL ENDED */
 
@@ -622,7 +632,7 @@ i {
 .Shimmer-Carousal{
   display: flex;
   justify-content: center;
-  padding: 0 10vw;
+  padding: 0 5vw;
   align-items: center;
   margin-top: 70px;
   gap: 5vw;

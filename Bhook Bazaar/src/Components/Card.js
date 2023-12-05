@@ -9,12 +9,12 @@ const Card = (props) => {
 
   const { slaString } = resData.info.sla;
   return (
-    <div className="ele">
+    <div className="ele bg-zinc-100">
       <div className="eleimg">
         <img src={CARD_IMG_URL + cloudinaryImageId}></img>
       </div>
-      <div class="eleinner">
-        <h3>{name}</h3>
+      <div className="eleinner">
+        <h3 className="font-bold">{name}</h3>
         <p>{[cuisines[0], cuisines[1]].join(", ")}</p>
 
         <div className="date">
@@ -22,8 +22,8 @@ const Card = (props) => {
             id="tag"
             style={
               avgRating >= 4
-                ? { backgroundColor: "rgb(0, 212, 21)" }
-                : { backgroundColor: "red" }
+                ? { backgroundColor: "rgb(84, 180, 20)" }
+                : { backgroundColor: "rgb(235, 51, 0)" }
             }
           >
             <span>

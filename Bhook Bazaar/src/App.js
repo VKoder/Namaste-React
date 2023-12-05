@@ -1,17 +1,18 @@
-import React, { lazy , Suspense} from "react";
+import React, { lazy , Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Footer from "./Components/Footer";
 import TopCarousal from "./Components/TopCarousal";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import About from "./Components/About";
-// import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
+import MidCarousal from "./Components/MidCarousal";
 
-const About = lazy(() => {import("./Components/About")});
-const Contact = lazy(() => {import("./Components/Contact")});
+
+const About = lazy(() => import("./Components/About"));
+const Contact = lazy(() => import("./Components/Contact"));
+
 
 const AppLayout = () => (
   <div className="app">
@@ -32,6 +33,7 @@ const appRouter = createBrowserRouter([
         element: (
           <>
             <TopCarousal />
+            <MidCarousal/>
             <Hero />
           </>
         ),
