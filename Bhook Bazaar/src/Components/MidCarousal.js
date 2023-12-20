@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Carousal2 } from "./Carousal";
-import ShimmerCarousal from "./ShimmerCarousal";
+
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
+import { Link } from "react-router-dom";
 
 const MidCarousal = () => {
   const [carausal2data, setcarausal2data] = useState(null);
@@ -26,23 +27,25 @@ const MidCarousal = () => {
     const data = await fetch(CORS_API + REST_API);
     const json = await data.json();
     setcarausal2data(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
-    setmidcarousaltitle(json?.data?.cards[1]?.card?.card?.header?.title)
-    console.log(json)
+    console.log(json);
+    setmidcarousaltitle(json?.data?.cards[1]?.card?.card?.header?.title);
   };
 
 
   return (
     <div className="slider" ref={sliderRef}>
       <div className="carausal-head">
-        <h2>{midcarousaltitle}</h2>
+        {/* <h2>{console.log(carausal2data.entityId)}</h2> */}
         <div className="slider__nav">{/* buttons */}</div>
       </div>
 
      
       <div className="slider__content">
-        {carausal2data?.map((rest) => (
-          <Carousal2 key={rest.id} restData={rest} />
-        ))}
+        {
+        carausal2data?.map((rest) => (
+          <Link to={"/ItemsMenu/" + rest?.entityId} key={rest.id}><Carousal2  restData={rest}/></Link>
+        ))
+        }
       </div>
       <hr></hr>
     </div>

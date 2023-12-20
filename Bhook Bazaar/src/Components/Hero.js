@@ -1,6 +1,6 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
-import ShimmerUI from "./ShimmerUI";
+import ShimmerUI from "../Shimmers/ShimmerUI";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../Utils/useRestaurantList";
 import useOnlineStatus from "../Utils/useOnlineStatus";
@@ -32,16 +32,19 @@ const Hero = () => {
   if (filteredRestList === null) {
     return <h1>Hii</h1>
   }
+  if (filteredRestList === undefined) {
+    return <h1>Something went wrg</h1>
+  }
  
   return (
     <div className="hero">
-      <h1 className="w-full text-left px-12 pb-8 font-[800] text-2xl tracking-normal">
+      <h1 className="w-full text-left px-12 pb-8  font-[800] text-2xl tracking-normal ">
         Restaurants with online food delivery in Pune
       </h1>
       <div className="w-full heroupper flex justify-between items-center px-12">
         <div className="heroleft flex justify-between items-center">
 
-        <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
+        <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm sm:"
            onClick={()=>{setfilteredRestList(restaurantList)}}
           >
            All

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CARD_IMG_URL } from "../Utils/constants";
-import ShimmerUI from "./ShimmerCard";
+import ShimmerUI from "../Shimmers/ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../Utils/useRestaurantMenu";
 
@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
   const { deliveryTime } = restInfo.sla;
   const { title } = restMenuTitle;
 
-  console.log(restMenu);
+  // console.log(restMenu);
 
   return (
     <div className="rest-menu">

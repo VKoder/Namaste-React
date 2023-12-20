@@ -516,6 +516,9 @@ i {
     letter-spacing: 2.1px;
     font-size: 3.5vw;
   }
+  .slider {
+    display:none;
+  }
 }
 
 
@@ -609,10 +612,10 @@ i {
   pointer-events: auto;
   cursor: pointer;
 }
-@media (min-width: 460px) {
+@media (min-width: 300px) {
   .slider__item {
     aspect-ratio: 1/3;
-    min-width: calc((50% / 1) - 8rem);
+    min-width: calc((90% / 1) - 1rem);
   }
   .slider__nav {
     justify-content: flex-end;
