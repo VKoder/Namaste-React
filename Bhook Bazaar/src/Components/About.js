@@ -1,19 +1,17 @@
-import UserClass from "./UserClass";
-import React from "react";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
-class About extends React.Component {
-    constructor(props){
-        super(props);
-        console.log("Parent Constructor")
-    }
+const About = ()=>  {
+  const OnlineStatus = useOnlineStatus();
 
-    componentDidMount(){
-        console.log("Parent Compoenent Did Mount")
-    }
-  render() {
-    console.log("Parent Render")
-    return <UserClass name={"Vivek khule"} location={"Katraj, Pune"} />;
-  }
+  if (!OnlineStatus) {
+    return <h1>Your Offline</h1>
+  }  
+    return (
+      <h1>Hiee</h1>
+      
+            
+      
+    )
 }
 
 export default About;

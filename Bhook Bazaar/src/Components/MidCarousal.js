@@ -43,7 +43,8 @@ const MidCarousal = () => {
       <div className="slider__content">
         {
         carausal2data?.map((rest) => (
-          <Link to={"/ItemsMenu/" + rest?.entityId} key={rest.id}><Carousal2  restData={rest}/></Link>
+          // <Link to={"/ItemsMenu/" + rest?.entityId} key={rest.id}></Link>
+          <Carousal2  restData={rest}/>
         ))
         }
       </div>
