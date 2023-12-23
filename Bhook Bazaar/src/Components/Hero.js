@@ -2,25 +2,39 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import ShimmerUI from "../Shimmers/ShimmerUI";
 import { Link } from "react-router-dom";
-import useRestaurantList from "../Utils/useRestaurantList";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import { CORS_API } from "../Utils/constants";
+import { REST_API } from "../Utils/constants";
 
 // HERO COMPONENT
 const Hero = () => {
-  const restaurantList = useRestaurantList();
 
+  const [restaurantList, setrestaurantList] = useState(null);
   const [filteredRestList, setfilteredRestList] = useState(null);
 
   const [searchTxt, setsearchTxt] = useState("");
 
   const OnlineStatus = useOnlineStatus();
 
-  //once the restaurant list changes ie the data is fetched change FILTEREDLIST
   useEffect(() => {
-    setfilteredRestList(restaurantList);
-  }, [restaurantList]);
-
+    fetchData();
+   }, []);
  
+   const fetchData = async () => {
+     const data = await fetch(CORS_API + REST_API);
+     const json = await data.json();
+ 
+     setrestaurantList(
+       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+     ||
+     json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   
+    setfilteredRestList(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ||
+    json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   };
+
 
   if (OnlineStatus === false) {
     return <h2>Your Offline</h2>;
@@ -29,9 +43,7 @@ const Hero = () => {
   if (restaurantList === null) {
     return <ShimmerUI />;
   }
-  if (filteredRestList === null) {
-    return <h1>Hii</h1>
-  }
+
   if (filteredRestList === undefined) {
     return <h1>Something went wrg</h1>
   }

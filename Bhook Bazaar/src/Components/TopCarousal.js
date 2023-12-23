@@ -25,7 +25,6 @@ const TopCarousal = () => {
     const data = await fetch(CORS_API + REST_API);
     const json = await data.json();
     setcarausaldata(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-
   };
 
   if (carausaldata === null) {

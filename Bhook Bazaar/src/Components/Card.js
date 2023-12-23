@@ -8,8 +8,7 @@ const Card = (props) => {
     resData.info;
 
   const { slaString } = resData.info.sla;
-  return 
-  (
+  return (
     <div className="ele bg-zinc-100">
       <div className="eleimg">
         <img src={CARD_IMG_URL + cloudinaryImageId}></img>
