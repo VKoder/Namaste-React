@@ -29,6 +29,8 @@ const Hero = () => {
      ||
      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    
+    console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
     setfilteredRestList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     ||
@@ -126,6 +128,7 @@ const Hero = () => {
             <Link to={"/restaurant/" + resItem.info.id} key={resItem.info.id}>
               <Card resData={resItem} />
             </Link>
+           
           )) // Iteratedly store restraunt Obj into resData which is a parameter of card!
         }
       </div>
