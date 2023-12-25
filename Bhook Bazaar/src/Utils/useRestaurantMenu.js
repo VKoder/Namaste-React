@@ -7,8 +7,7 @@ const useRestaurantMenu= (id)=>{
     //UseState to hold and update data
   const [restInfo, setrestInfo] = useState(null);
   const [restMenu, setrestMenu] = useState(null);
-  const [NewrestMenu, setNewrestMenu] = useState(null);
-  const [restMenuTitle, setrestMenuTitle] = useState(null);
+  const [restOff, setrestOff] = useState(null);
 
 
 //useEffect() to fetch the API after component will load
@@ -22,20 +21,15 @@ useEffect(() => {
     const json = await data.json();
     const Category = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((cat)=> cat?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
     setrestMenu(Category);
-    setNewrestMenu(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
-    setrestMenuTitle(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card
-    );
+    
     setrestInfo(json?.data?.cards[0]?.card?.card?.info);
 
-    console.log(json)
+    setrestOff(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers)
+
+    console.log(Category)
    
   };
-  return {restInfo , restMenu, restMenuTitle, NewrestMenu};
+  return {restInfo , restMenu, restOff};
 
 }
 export default useRestaurantMenu;

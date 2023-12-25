@@ -6,14 +6,13 @@ const RestaurantCategory = ({data})=>{
 
     function handleClick(){
         setshowlist(!showlist)  // toggle functionality - after clicking on handle setshowlist opp of showlist
-        console.log(showlist)
    }
 
     return (
         <div className="my-4 shadow-md cursor-pointer transition-all" >
             <div className="flex justify-between items-center py-5 px-4" onClick={handleClick}>
                 <h1 className="font-extrabold text-lg">{data?.title} ({data?.itemCards.length})</h1>
-                { showlist ? <span><i class="ri-arrow-up-s-line"></i></span> : <span><i class="ri-arrow-down-s-line"></i></span> }
+                { showlist ? <span><i className="ri-arrow-up-s-line text-2xl font-bold"></i></span> : <span><i className="ri-arrow-down-s-line pr-2 text-2xl font-bold"></i></span> }
             </div>
 
         {showlist && <ItemCategory item={data}/>}

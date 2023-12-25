@@ -11,7 +11,7 @@
   box-sizing: border-box;
   font-family: "PT Sans", "Lato", Calibri, sans-serif;
   /* color: #282c3f; */
-  /* background-color: #8d8d8d; */
+  /* background-color: #; */
 }
 .app {
   /* background-color: #f0f0f0; */
@@ -746,7 +746,6 @@ i {
   justify-content: space-between;
   align-items: flex-start;
   /* padding: 2vw 2vw; */
-  border-bottom: 1px solid #8d8d8d;
   transition: ease-in;
 }
 .menu-left{
@@ -756,7 +755,7 @@ i {
   color: #353535;
   font-size: 16px;
   line-height: 25px;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.5px;
   word-spacing: 2px;
 }
 .mid-menu button{
@@ -764,21 +763,28 @@ i {
   border: none;
   outline: none;
 }
-.menu-left p:nth-child(2){
-  padding-bottom: 2vw;
-  padding-top: 0.5vw;
-  font-size: 14px;
+.menu-left p:nth-child(1){
+  /* padding-bottom: 2vw; */
+  /* padding-top: 0.5vw; */
+  font-size: 20px;
   color: #353535;
   line-height: 25px;
-  letter-spacing: 0.1px;
+  letter-spacing: -0.1px;
   word-spacing: 2px;
 }
 .menu-left p:nth-child(3){
-  font-size: 14px;
-  color: #8d8d8d;
+  font-size: 10px;
+  /* color: #8d8d8d; */
   line-height: 20px;
-  letter-spacing: 0.25px;
-  word-spacing: 2px;
+  letter-spacing: -0.1px;
+  word-spacing: 1px;
+}
+.menu-left p:nth-child(4){
+  font-size: 14px;
+  /* color: #8d8d8d; */
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  word-spacing: 1px;
 }
 .menu-right{
   height: 70%;
@@ -803,13 +809,3 @@ i {
   border-radius: 5px;
   cursor: pointer;
 }
-/* .veg{
-  width: 10px;
-  border-radius: 50%;
-  background-color: green;
-}
-.non-veg{
-  width: 10px;
-  border-radius: 50%;
-  background-color: red;
-} */
