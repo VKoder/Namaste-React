@@ -42,9 +42,9 @@ const TopCarousal = () => {
 
       <div className="slider__content">
         {carausaldata?.map((rest) => (
-        <Link to={"ItemsMenu/" + rest.id}>
+
           <Carousal1 key={rest.id} restData={rest} />
-          </Link>
+        
         ))}
       </div>
     </div>

@@ -3,7 +3,8 @@ import { CARD_IMG_URL } from "../Utils/constants";
 import ShimmerUI from "../Shimmers/ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../Utils/useRestaurantMenu";
-
+import RestaurantCategory from "./RestaurantCategory";
+import OfferCard from "./OfferCard";
 const RestaurantMenu = () => {
   const [veg, setveg] = useState("Veg");
 
@@ -20,41 +21,44 @@ const RestaurantMenu = () => {
     return <ShimmerUI />;
   }
 
+
   //Destructing
-  const { name, cuisines, avgRating, costForTwoMessage, cloudinaryImageId } =
+  const { name, cuisines, avgRating, costForTwoMessage, cloudinaryImageId, areaName} =
     restInfo;
   const { deliveryTime } = restInfo.sla;
-  const { title } = restMenuTitle;
 
-  // console.log(restMenu);
+  // console.log(restMenu); 
 
   return (
-    <div className="rest-menu">
-      <div className="top-menu">
-        <div className="top-menu-left">
-          <img src={CARD_IMG_URL + cloudinaryImageId}></img>
+    <div className="rest-menu my-4 w-8/12 mx-auto">
+      <div className="flex justify-between items-center flex-row   border-b-2 py-4">
+        <div className="flex justify-between items-start flex-col ">
+          <h2 className="text-2xl font-bold pb-3">{name}</h2>
+         <span className="text-sm font-semibold text-gray-400">{cuisines}</span>
+         <span className="text-sm font-semibold text-gray-400">{areaName}</span>
+         <div className="mt-4">
+          <span className="pr-2 text-sm text-gray-500 font-semibold"><i className="ri-e-bike-2-fill pr-2 text-base"></i>0.8km</span>
+          <span className="text-sm font-medium text-gray-500">|</span>
+          <span className="pl-2 text-sm  text-gray-500 font-semibold">₹33 Delivery fee will apply</span>
         </div>
-        <div className="top-menu-right">
-          <h1>{name}</h1>
-          <p>{cuisines.join(", ")}</p>
-          <div className="top-menu-right-child">
-            <p
-              style={
-                avgRating > 3.9
-                  ? { backgroundColor: "darkgreen" }
-                  : { backgroundColor: "rgb(164, 14, 14)" }
-              }
-            >
-              <i class="ri-star-fill"></i>
-              {avgRating}
-            </p>
-            <span>|</span>
-            <p>{deliveryTime}mins</p>
-            <span>|</span>
-            <p>{costForTwoMessage}</p>
-          </div>
         </div>
+        <div className="flex justify-between items-center flex-col text-end px-2 py-2 border-black rounded-lg shadow-lg">
+          <span className="text-green-700 font-extrabold text-sm py-2 px-0.5 items-center flex justify-between gap-2"><i className="ri-star-fill"></i>{avgRating}</span>
+          <span className="border-t-2 py-2 px-0.5">4k rating</span>
+        </div>
+
+        
+       
+
       </div>
+
+
+    <div className="flex justify-start items-start mt-5 gap-4">
+      <span className="font-extrabold text-base"><i class="ri-time-fill pr-2 text-lg"></i>25 MINS</span>
+      <span className="font-extrabold text-base"><i class="ri-money-rupee-circle-line"></i>₹{costForTwoMessage}</span>
+    </div>
+
+    <OfferCard/>
 
       <div className="mid-menu">
         <button
@@ -81,30 +85,11 @@ const RestaurantMenu = () => {
         </button>
       </div>
 
-      <li>
-        <div className="main-menu">
-          <h1>
-            {title}
-            <span>({restMenu?.length})</span>
-          </h1>
-
-          {/* Iterating the recommended list/array of objs */}
-
-          {restMenu?.map((rest) => (
-            <div key={rest.card.info.id} className="menu-card">
-              <div className="menu-left">
-                <h3>{rest.card.info.name}</h3>
-                <p>{"Rs " + rest.card.info.price / 100}</p>
-                <p>{rest.card.info.description}</p>
-              </div>
-              <div className="menu-right">
-                <img src={CARD_IMG_URL + rest.card.info.imageId}></img>
-                <button id="addBtn">Add</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </li>
+      {
+      restMenu.map((cat)=>
+        <RestaurantCategory data={cat?.card?.card} key={cat?.card?.card?.id}/>
+      )
+    }
     </div>
   );
 };

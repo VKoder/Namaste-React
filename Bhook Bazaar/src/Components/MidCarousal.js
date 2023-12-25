@@ -35,7 +35,7 @@ const MidCarousal = () => {
   return (
     <div className="slider" ref={sliderRef}>
       <div className="carausal-head">
-        {/* <h2>{console.log(carausal2data.entityId)}</h2> */}
+        <h2>Whats on your mind?</h2>
         <div className="slider__nav">{/* buttons */}</div>
       </div>
 

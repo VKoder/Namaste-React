@@ -56,4 +56,19 @@ const Card = (props) => {
   );
 };
 
+// HOC takes Component as an INPUT and Enhanced it by adding extra props etc to it and than return the Component
+// here it is taking CARD and adding promoted label and returning the component 
+export const withPromoted = (Card) => {
+  return (props) => {
+    return (
+      <div className="ele relative">
+        <span className="absolute top-2 left-4 text-white bg-slate-900 rounded-md px-3 py-1 ">Promoted</span>
+        {/*  ... is a spread operater that is used to accept the data in a prop by our function    */}
+        <Card {...props}/>    
+      </div>
+    )
+  }
+}
+
+
 export default Card;

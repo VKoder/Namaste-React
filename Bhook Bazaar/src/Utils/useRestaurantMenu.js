@@ -20,10 +20,8 @@ useEffect(() => {
   const fetchData = async () => {
     const data = await fetch( CORS_API + REST_MENU_API + id);
     const json = await data.json();
-    setrestMenu(
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
+    const Category = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((cat)=> cat?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    setrestMenu(Category);
     setNewrestMenu(
       json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
         ?.card?.itemCards
@@ -33,6 +31,9 @@ useEffect(() => {
         ?.card
     );
     setrestInfo(json?.data?.cards[0]?.card?.card?.info);
+
+    console.log(json)
+   
   };
   return {restInfo , restMenu, restMenuTitle, NewrestMenu};
 

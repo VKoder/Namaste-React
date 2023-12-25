@@ -10,7 +10,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "PT Sans", "Lato", Calibri, sans-serif;
-  color: #282c3f;
+  /* color: #282c3f; */
+  /* background-color: #8d8d8d; */
 }
 .app {
   /* background-color: #f0f0f0; */
@@ -652,7 +653,7 @@ i {
 
 /* RESTAURANT MENU */
 .rest-menu{
-  background-color: #9c9c9c;
+  /* background-color: #9c9c9c; */
   min-height: 100vh;
 }
 .rest-menu li{
@@ -744,8 +745,9 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2vw 0;
-  border-bottom: 1px solid black;
+  /* padding: 2vw 2vw; */
+  border-bottom: 1px solid #8d8d8d;
+  transition: ease-in;
 }
 .menu-left{
   width: 65%;
