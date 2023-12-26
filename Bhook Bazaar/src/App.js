@@ -2,7 +2,6 @@ import React, { lazy , Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
-import Footer from "./Components/Footer";
 import TopCarousal from "./Components/TopCarousal";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./Components/Error";
@@ -18,8 +17,7 @@ const Contact = lazy(() => import("./Components/Contact"));
 const AppLayout = () => (
   <div className="app">
     <Header />
-    <Outlet />
-    <Footer />
+    <Outlet/>
   </div>
 );
 

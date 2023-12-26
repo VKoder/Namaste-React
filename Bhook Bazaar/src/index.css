@@ -21,6 +21,7 @@
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  margin-top: 6vw;
   /* position: relative; */
 }
 .header {
@@ -54,10 +55,9 @@ ul {
 }
 .hright li {
   padding-right: 4vw;
-  font-size: 1vw;
+  /* font-size: 1vw; */
   list-style: none;
-  text-transform: uppercase;
-  font-weight: 600;
+  /* font-weight: 600; */
   
 }
 .hright #hr3 i{
@@ -69,15 +69,6 @@ ul {
   justify-content: center;
   align-items: center;
 }
-#hr1 li a{
-  text-decoration: none;
-  color: black;
-}
-#hr2 i {
-  font-size: 2vw;
-  cursor: pointer;
-}
-
 
 .hero {
   display: flex;
@@ -302,7 +293,7 @@ i {
 
 /*Animation to Shimmer Component Cards */
 .stroke {
-  height: 380px; 
+  max-height: 380px; 
   background: #d6d6d6;
 }
 .animate {

@@ -1,8 +1,7 @@
 import { useState } from "react"
 import ItemCategory from "./ItemCategory"
-import ShimmerUI from "../Shimmers/ShimmerUI"
 const RestaurantCategory = ({data})=>{
-    const [showlist, setshowlist] = useState(false)
+    const [showlist, setshowlist] = useState(true)
 
     function handleClick(){
         setshowlist(!showlist)  // toggle functionality - after clicking on handle setshowlist opp of showlist
