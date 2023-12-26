@@ -31,8 +31,7 @@ const Hero = () => {
        json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
      ||
      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-   
-    console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info?.aggregatedDiscountInfoV3?.header)
+  
 
     setfilteredRestList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -61,12 +60,11 @@ const Hero = () => {
       <div className="w-full heroupper flex justify-between items-center px-12">
         <div className="heroleft flex justify-between items-center">
 
-        <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm sm:"
+          <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm sm:"
            onClick={()=>{setfilteredRestList(restaurantList)}}
           >
            All
           </button>
-
           <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
               const TopRated = restaurantList.filter(
@@ -77,9 +75,6 @@ const Hero = () => {
           >
             Top Rated
           </button>
-
-          
-
           <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
               const isVeg = restaurantList.filter(
@@ -92,10 +87,7 @@ const Hero = () => {
           </button>
           <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
-              const lessThan300 = restaurantList.filter(
-                (rest) => rest.info.feeDetails.totalFee/100 < 50
-              );
-              setfilteredRestList(lessThan300);
+              console.log(restaurantList)
             }}
           >
             Less than Rs.300

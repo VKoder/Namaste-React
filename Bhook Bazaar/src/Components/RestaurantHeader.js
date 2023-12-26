@@ -57,7 +57,7 @@ const RestaurantHeader = ({ restInfo }) => {
           </span>
         )}
         <span className="font-extrabold text-base">
-          <i class="ri-cash-line pr-2 text-lg"></i>
+          <i className="ri-cash-line pr-2 text-lg"></i>
           {costForTwoMessage}
         </span>
       </div>

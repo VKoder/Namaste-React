@@ -27,7 +27,6 @@ const MidCarousal = () => {
     const data = await fetch(CORS_API + REST_API);
     const json = await data.json();
     setcarausal2data(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
-    console.log(json);
     setmidcarousaltitle(json?.data?.cards[1]?.card?.card?.header?.title);
   };
 
@@ -44,7 +43,7 @@ const MidCarousal = () => {
         {
         carausal2data?.map((rest) => (
           // <Link to={rest?.entityId} key={rest.id}>
-          <Carousal2  restData={rest}/>
+          <Carousal2 key={rest?.id} restData={rest}/>
           // </Link>
         ))
         }

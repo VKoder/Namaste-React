@@ -42,7 +42,7 @@ const RestaurantMenu = () => {
           </span>
         </div>
         <span className="text-xs font-medium text-gray-400 pt-3">
-          <i class="ri-map-pin-line"></i> {restInfo?.labels?.[1]?.message}
+          <i className="ri-map-pin-line"></i> {restInfo?.labels?.[1]?.message}
         </span>
       </div>
     </div>

@@ -18,7 +18,7 @@ const Header = () => {
         </ul>
       </div>
       <div id="hr2">
-        <i class="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i>
+        <i className="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i>
       </div>
       
     </div>

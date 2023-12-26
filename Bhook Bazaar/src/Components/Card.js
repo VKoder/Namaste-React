@@ -27,27 +27,27 @@ const Card = (props) => {
             }
           >
             <span>
-              <i class="ri-star-fill"></i>
+              <i className="ri-star-fill"></i>
             </span>
             {avgRating}
           </h5>
           <h5>
             <span>
-              <i class="ri-star-fill"></i>
+              <i className="ri-star-fill"></i>
             </span>
             {/* {header} */}
             {costForTwo}
           </h5>
           <h5>
             <span>
-              <i class="ri-e-bike-2-fill"></i>
+              <i className="ri-e-bike-2-fill"></i>
             </span>
             {slaString}
           </h5>
         </div>
         <p id="rm">
           <span>
-            <i class="ri-more-2-line"></i>
+            <i className="ri-more-2-line"></i>
           </span>
           {areaName}
         </p>
