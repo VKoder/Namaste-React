@@ -65,3 +65,20 @@
 
 - **State Management:**
   - Understand that Context is not a replacement for state management libraries like Redux; it's a tool for a specific use case.
+
+
+---
+
+# Controlled and Uncontrolled Components in React
+
+## Controlled Components:
+
+Controlled components in React do not have their own internal state. Instead, their state is managed and controlled by their closest ancestor or parent component. The parent component passes down the necessary state values as props, and the controlled component notifies the parent about any changes through callback functions.
+
+## Uncontrolled Components:
+
+Uncontrolled components in React have their own internal state. They manage and control their state independently without relying on a parent component to pass down state values. Uncontrolled components handle their own state changes internally, providing more autonomy in managing their behavior and state.
+
+---
+
+**Note:** This information serves as a quick reference for understanding the concepts of controlled and uncontrolled components in React. Feel free to customize and expand upon it based on your project's documentation needs.
