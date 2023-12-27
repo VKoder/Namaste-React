@@ -52,7 +52,7 @@ const RestaurantHeader = ({ restInfo }) => {
       <div className="flex justify-start items-start my-5 gap-4">
         {slaString && (
           <span className="font-extrabold text-base">
-            <i class="ri-time-fill pr-2 text-lg"></i>
+            <i className="ri-time-fill pr-2 text-lg"></i>
             {slaString}
           </span>
         )}

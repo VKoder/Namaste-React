@@ -26,8 +26,8 @@ const MidCarousal = () => {
   const fetchData = async () => {
     const data = await fetch(CORS_API + REST_API);
     const json = await data.json();
-    setcarausal2data(json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
-    setmidcarousaltitle(json?.data?.cards[1]?.card?.card?.header?.title);
+    setcarausal2data(json?.data?.cards[0]?.card?.card?.imageGridCards?.info || json?.data?.cards[1]?.card?.card?.imageGridCards?.info);
+    setmidcarousaltitle(json?.data?.cards[0]?.card?.card?.header?.title || json?.data?.cards[1]?.card?.card?.header?.title);
   };
 
 

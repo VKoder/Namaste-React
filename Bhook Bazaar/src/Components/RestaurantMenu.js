@@ -23,13 +23,16 @@ const RestaurantMenu = () => {
 
       <div className="flex justify-start items-center flex-row gap-1 auto overflow-x-scroll space-x-4 p-4">
         {restOff.map((off) => (
-          <OfferCard offdata={off} key={off.id} />
+          <OfferCard offdata={off} key={off?.info?.description}  />
         ))}
+       
       </div>
 
-      {restMenu.map((cat) => (
-        <RestaurantCategory data={cat?.card?.card} key={cat?.card?.card?.id} />
+      {restMenu.map((cat, index) => (
+        <RestaurantCategory data={cat?.card?.card} key={index} />
       ))}
+      {console.log(restMenu)}
+      {console.log(restMenu[0]?.card?.card?.itemCards[0]?.card?.info?.id)}
 
       <div className="bgc flex justify-start items-start flex-col pt-6 pb-32 px-4 py-6 bg-gray-100">
         <div>

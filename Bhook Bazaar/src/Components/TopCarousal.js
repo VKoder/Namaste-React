@@ -23,9 +23,10 @@ const TopCarousal = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(CORS_API + REST_API);
+    const data = await fetch(CORS_API + "https://api.prod.astrotalk.in/AstroTalk/consultant/get/for/homePage?pageNo=0&pageSize=4&isAdmin=0");
     const json = await data.json();
-    setcarausaldata(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+    setcarausaldata(json?.data?.cards?.[0]?.card?.card?.imageGridCards?.info);
+    console.log(json)
   };
 
   if (carausaldata === null) {

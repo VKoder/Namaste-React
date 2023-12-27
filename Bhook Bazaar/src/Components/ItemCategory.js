@@ -6,7 +6,7 @@ const ItemCategory = ({ item }) => {
   const { itemCards } = item;
 
   return itemCards.map((items) => (
-    <div className="menu-card py-8 px-4 my-1 border-2 border-dotted">
+    <div key={items?.card?.info?.id} className="menu-card py-8 px-4 my-1 border-2 border-dotted">
       <div className="menu-left">
         <span>
           {items?.card?.info?.itemAttribute?.vegClassifier == "NONVEG" ? (

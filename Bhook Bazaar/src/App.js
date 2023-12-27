@@ -8,6 +8,8 @@ import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import MidCarousal from "./Components/MidCarousal";
 import ItemsMenu from "./Components/ItemsMenu";
+import userContext from "./Utils/userContext";
+import themeContext from "./themeContext";
 
 
 const About = lazy(() => import("./Components/About"));
@@ -15,10 +17,14 @@ const Contact = lazy(() => import("./Components/Contact"));
 
 
 const AppLayout = () => (
+<themeContext.Provider value={{theme: "Light"}}>
+  <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
   <div className="app">
     <Header />
     <Outlet/>
   </div>
+  </userContext.Provider>
+  </themeContext.Provider>
 );
 
 const appRouter = createBrowserRouter([

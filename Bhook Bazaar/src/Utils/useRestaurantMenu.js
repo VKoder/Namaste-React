@@ -27,7 +27,7 @@ const useRestaurantMenu = (id) => {
     setrestMenu(Category);
 
     setrestInfo(json?.data?.cards[0]?.card?.card?.info);
-
+    console.log(json)
     setrestOff(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers
     );
