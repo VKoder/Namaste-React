@@ -1,9 +1,17 @@
 import { CARD_IMG_URL } from "../Utils/constants";
 import veg from "../Images/veg.webp";
 import non_veg from "../Images/non-veg.webp";
+import { useDispatch } from "react-redux";
+import { addItem } from "../Redux Store/cartSlice";
 
 const ItemCategory = ({ item }) => {
   const { itemCards } = item;
+
+  const dispatch = useDispatch()
+
+  const handleAddItem = (items) => {
+    dispatch(addItem(items))
+  }
 
   return itemCards.map((items) => (
     <div key={items?.card?.info?.id} className="menu-card py-8 px-4 my-1 border-2 border-dotted">
@@ -28,7 +36,7 @@ const ItemCategory = ({ item }) => {
         </h3>
         <p className="font-semibold text-slate-800 pb-2 price">
           <span className="text-base">₹ </span>
-          <span className="text-sm">{items.card.info.price / 100}</span>
+          <span className="text-sm">{items.card.info.defaultPrice / 100}</span>
           <span
             className="ml-3 justify-center items-center py-0.5 px-1"
             style={{
@@ -67,7 +75,7 @@ const ItemCategory = ({ item }) => {
             </span>
           </div>
         )}
-        <button id="addBtn">Add</button>
+        <button id="addBtn" onClick={()=> handleAddItem(items)}>Add</button>
       </div>
     </div>
   ));

@@ -10,6 +10,8 @@ import MidCarousal from "./Components/MidCarousal";
 import ItemsMenu from "./Components/ItemsMenu";
 import userContext from "./Utils/userContext";
 import themeContext from "./themeContext";
+import { Provider } from "react-redux";
+import appStore from "./Redux Store/appStore";
 
 
 const About = lazy(() => import("./Components/About"));
@@ -17,6 +19,7 @@ const Contact = lazy(() => import("./Components/Contact"));
 
 
 const AppLayout = () => (
+  <Provider store={appStore}>
 <themeContext.Provider value={{theme: "Light"}}>
   <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
   <div className="app">
@@ -25,6 +28,7 @@ const AppLayout = () => (
   </div>
   </userContext.Provider>
   </themeContext.Provider>
+  </Provider>
 );
 
 const appRouter = createBrowserRouter([
