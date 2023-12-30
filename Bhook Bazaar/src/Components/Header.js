@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
 
   const cartItems = useSelector((store)=> store.cart.item)
-console.log(cartItems)
+  console.log(cartItems)
 
   const data = useContext(userContext)
   // const {loggedInUser} = useContext(userContext)   - one n the same
@@ -29,7 +29,7 @@ console.log(cartItems)
         </ul>
       </div>
       <div id="hr2">
-        <i className="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i>
+      <Link to={"/cart"}><i className="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i></Link>
         <span className="pl-1 text-base font-semibold text-gray-600">{cartItems.length}</span>
       </div>
       <span>{data.loggedInUser}</span>
