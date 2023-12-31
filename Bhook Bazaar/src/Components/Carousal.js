@@ -1,3 +1,4 @@
+import ShimmerMidCarousal from "../Shimmers/ShimmerMidCarousal";
 import { CARD_IMG_URL } from "../Utils/constants";
 
 export  const Carousal1 = (props) => {

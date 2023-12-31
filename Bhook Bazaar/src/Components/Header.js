@@ -8,8 +8,7 @@ import { useSelector } from "react-redux";
 // HEADER COMPONENT
 const Header = () => {
 
-  const cartItems = useSelector((store)=> store.cart.item)
-  console.log(cartItems)
+  const cartItems = useSelector((store)=> store.cart.items)
 
   const data = useContext(userContext)
   // const {loggedInUser} = useContext(userContext)   - one n the same
@@ -29,7 +28,7 @@ const Header = () => {
         </ul>
       </div>
       <div id="hr2">
-      <Link to={"/cart"}><i className="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i></Link>
+      <Link to={"/Cart"}><i className="ri-shopping-cart-line text-lg font-semibold text-gray-600 tracking-wide pr-3"></i></Link>
         <span className="pl-1 text-base font-semibold text-gray-600">{cartItems.length}</span>
       </div>
       <span>{data.loggedInUser}</span>

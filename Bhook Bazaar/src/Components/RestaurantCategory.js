@@ -14,7 +14,7 @@ const RestaurantCategory = ({data})=>{
                 { showlist ? <span><i className="ri-arrow-up-s-line text-2xl font-bold"></i></span> : <span><i className="ri-arrow-down-s-line pr-2 text-2xl font-bold"></i></span> }
             </div>
 
-        {showlist && <ItemCategory item={data}/>}
+        {showlist && <ItemCategory item={data?.itemCards}/>}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { Carousal1 } from "./Carousal";
 import ShimmerCarousal from "../Shimmers/ShimmerCarousal";
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
-import { Link } from "react-router-dom";
+
 
 const TopCarousal = () => {
   const [carausaldata, setcarausaldata] = useState(null);
@@ -23,9 +23,9 @@ const TopCarousal = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(CORS_API + "https://api.prod.astrotalk.in/AstroTalk/consultant/get/for/homePage?pageNo=0&pageSize=4&isAdmin=0");
+    const data = await fetch(CORS_API + REST_API);
     const json = await data.json();
-    setcarausaldata(json?.data?.cards?.[0]?.card?.card?.imageGridCards?.info);
+    setcarausaldata(json?.data?.cards?.[0]?.card?.card?.gridElements?.info);
     console.log(json)
   };
 

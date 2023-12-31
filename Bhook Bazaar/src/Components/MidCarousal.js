@@ -4,6 +4,7 @@ import { Carousal2 } from "./Carousal";
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
 import { Link } from "react-router-dom";
+import ShimmerMidCarousal from "../Shimmers/ShimmerMidCarousal";
 
 const MidCarousal = () => {
   const [carausal2data, setcarausal2data] = useState(null);

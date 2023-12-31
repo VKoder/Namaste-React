@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../Redux Store/cartSlice";
 
 const ItemCategory = ({ item }) => {
-  const { itemCards } = item;
+  // console.log(item)
+  // const { itemCards } = item;
 
   const dispatch = useDispatch()
 
@@ -13,7 +14,7 @@ const ItemCategory = ({ item }) => {
     dispatch(addItem(items))
   }
 
-  return itemCards.map((items) => (
+  return item.map((items) => (
     <div key={items?.card?.info?.id} className="menu-card py-8 px-4 my-1 border-2 border-dotted">
       <div className="menu-left">
         <span>
@@ -36,7 +37,7 @@ const ItemCategory = ({ item }) => {
         </h3>
         <p className="font-semibold text-slate-800 pb-2 price">
           <span className="text-base">₹ </span>
-          <span className="text-sm">{items.card.info.defaultPrice / 100}</span>
+          <span className="text-sm">{items.card.info.defaultPrice / 100 || items.card.info.price / 100.00}</span>
           <span
             className="ml-3 justify-center items-center py-0.5 px-1"
             style={{
