@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Carousal2 } from "./Carousal";
-
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
 import { Link } from "react-router-dom";
@@ -31,6 +30,9 @@ const MidCarousal = () => {
     setmidcarousaltitle(json?.data?.cards[0]?.card?.card?.header?.title || json?.data?.cards[1]?.card?.card?.header?.title);
   };
 
+  if (carausal2data === null) {
+    return <ShimmerMidCarousal/>
+  }
 
   return (
     <div className="slider" ref={sliderRef}>
