@@ -1,4 +1,4 @@
-import Card, { withPromoted } from "./Card";
+import Card from "./Card";
 import { useEffect, useState } from "react";
 import ShimmerUI from "../Shimmers/ShimmerUI";
 import { Link } from "react-router-dom";
@@ -13,7 +13,6 @@ const Hero = () => {
   const [restaurantList, setrestaurantList] = useState(null);
   const [filteredRestList, setfilteredRestList] = useState(null);
 
-  const CardHOC = withPromoted(Card);
 
   const [searchTxt, setsearchTxt] = useState("");
 
@@ -46,7 +45,7 @@ const Hero = () => {
   }
  
   return (
-    <div className="hero">
+    <div className="hero px-12">
       <h1 className="w-full text-left px-12 pb-8  font-[800] text-2xl tracking-normal ">
         Restaurants with online food delivery in Pune
       </h1>
@@ -116,9 +115,7 @@ const Hero = () => {
             <Link to={"/restaurant/" + resItem.info.id} key={resItem.info.id}>
 
               {
-                resItem.info.avgRating > 4 
-              ? <CardHOC resData={resItem} /> 
-              : <Card resData={resItem}/>
+             <Card resData={resItem}/>
               }
               
             </Link>

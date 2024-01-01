@@ -16,7 +16,7 @@ const Header = () => {
   const {theme} = useContext(themeContext)
 
   return (
-    <div className="header shadow-lg bg-white top-0 fixed">
+    <div className="header shadow-lg bg-white top-0 m-auto fixed">
     <div className="hleft w-16">
     <Link to="/"><img src={logo}></img></Link>
     </div>
