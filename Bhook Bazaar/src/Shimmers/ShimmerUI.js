@@ -1,14 +1,17 @@
 import ShimmerCard from "./ShimmerCard";
-import ShimmerMidCarousal from "./ShimmerMidCarousal";
 
 const ShimmerUI = () => {
   return (
-    <div className="Shimmer-container px-12">
-      <div className="Shimmer-cards">
-     <ShimmerCard/>
-     <ShimmerCard/>
-     <ShimmerCard/>
-      </div>
+      <div className="flex justify-center items-center w-screen gap-10 flex-wrap px-16 py-10">
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+      <ShimmerCard/>
+    
     </div>
   );
 };

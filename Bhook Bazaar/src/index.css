@@ -111,8 +111,8 @@ ul {
 
 .restraunt {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: fl;
+  align-items: flex-start;
   padding: 5vw 5vw;
   gap: 4vw;
   flex-wrap: wrap;
@@ -219,58 +219,7 @@ i {
 }
 
 
-/* SHIMMER UI */
-.Shimmer-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 3vw;
-  width: 100%;
-  min-height: 100vh;
-}
-.shimmer-search input{
-  padding: 1vw 0vw;
-  padding-right: 10vw;
-  padding-left: 2vw;
-  border: 1px solid #c1c1c1;
-  border-radius: 2vw;
-  font-size: 1.2vw;
-}
-#shimmer-btn {
-  padding: 1vw 2vw;
-  border: none;
-  border-radius: 2vw;
-  font-size: 1.4vw;
-  font-weight: 520;
-  background-color: #bebebe;
-  cursor: pointer;
-  /* background-color: #4CAF50  */
-}
-
-.shimmer-card{
-  background-color: #ffffff;
-  /* max-width: 280px;
-  max-height: 320px; */
-  width: 300px;
-  height: 380px;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 3vw;
-  padding: 1vw;
-}
-.Shimmer-cards{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5vw 10vw;
-  gap: 4vw;
-  flex-wrap: wrap;
-
-}
+/*  */
 .shimmer-img {
   background-color: #bebebe;
   width: 100%;
@@ -519,12 +468,9 @@ i {
 
 
 /* TOP CAROUSAL */
-.carausal-head h2 {
-  color: #000;
-  font-weight: 800;
-  font-size: 23px;
+/* .carausal-head h2 {
   width:100%;
-}
+} */
 .slider {
   width: 92%;
   max-width: 1280px;

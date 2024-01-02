@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useRestaurantMenu from "../Utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import OfferCard from "./OfferCard";
 import RestaurantHeader from "./RestaurantHeader";
-import RestaurantMenuShimmer from "../RestaurantMenuShimmer";
+import RestaurantMenuShimmer from "../Shimmers/RestaurantMenuShimmer";
 
 const RestaurantMenu = () => {
   //UseParams to fetch dynamic from router child
@@ -18,7 +18,15 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="rest-menu my-4 w-8/12 mx-auto">
+    <div>
+      <div className="w-8/12 mx-auto pt-5">
+        <Link to={"/"}><span className="text-[10px] text-gray-400 font-bold pr-1">Home</span></Link>
+        <span className="text-[10px] text-gray-400 font-bold pr-1">/</span> 
+        <span className="text-[10px] text-gray-400 font-bold pr-1">Pune</span>   
+        <span className="text-[10px] text-gray-400 font-bold pr-1">/</span> 
+        <span className="text-[10px] text-gray-600 font-bold pr-1">{restInfo.name}</span>
+      </div>
+      <div className="rest-menu my-4 w-8/12 mx-auto">
       <RestaurantHeader restInfo={restInfo} />
 
       <div className="flex justify-start items-center flex-row gap-1 auto overflow-x-scroll space-x-4 p-4">
@@ -46,6 +54,7 @@ const RestaurantMenu = () => {
           <i className="ri-map-pin-line"></i> {restInfo?.labels?.[1]?.message}
         </span>
       </div>
+    </div>
     </div>
   );
 };

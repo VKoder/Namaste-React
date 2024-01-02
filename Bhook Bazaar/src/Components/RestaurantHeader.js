@@ -16,16 +16,16 @@ const RestaurantHeader = ({ restInfo }) => {
     <div>
       <div className="flex justify-between items-center flex-row  border-b-2 border-dotted py-4">
         <div className="flex justify-between items-start flex-col ">
-          <h2 className="text-2xl font-bold pb-3">{name}</h2>
-          <span className="text-sm font-semibold text-gray-400">
+          <span className="text-xl font-extrabold text-gray-800 pb-3">{name}</span>
+          <span className="text-xs font-semibold text-gray-400 pb-1">
             {cuisines.join(", ")}
           </span>
-          <span className="text-sm font-semibold text-gray-400">
+          <span className="text-xs font-semibold text-gray-400">
             {areaName}, {lastMileTravelString}
           </span>
           <div className="mt-4">
             {feeDetails?.message && (
-              <span className="pr-2 text-sm text-gray-500 font-semibold flex flex-row gap-2">
+              <span className="pr-2 text-xs text-gray-500 font-semibold flex flex-row gap-2">
                 <img
                   className="w-5"
                   src={CARD_IMG_URL + feeDetails?.icon}

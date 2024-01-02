@@ -26,9 +26,10 @@ const Hero = () => {
      const data = await fetch(CORS_API + REST_API);
      const json = await data.json();
 
-    console.log(json)
+
       setrestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setfilteredRestList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    };
 
 
@@ -43,31 +44,32 @@ const Hero = () => {
   if (filteredRestList === undefined) {
     return <h1>Something went wrg</h1>
   }
+
  
   return (
     <div className="hero px-12">
-      <h1 className="w-full text-left px-12 pb-8  font-[800] text-2xl tracking-normal ">
+      <h1 className="w-full text-left px-12 pb-8  font-[1000] text-2xl tracking-normal ">
         Restaurants with online food delivery in Pune
       </h1>
       <div className="w-full heroupper flex justify-between items-center px-12">
         <div className="heroleft flex justify-between items-center">
 
-          <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm sm:"
+          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm sm:"
            onClick={()=>{setfilteredRestList(restaurantList)}}
           >
            All
           </button>
-          <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
+          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
               const TopRated = restaurantList.filter(
-                (rest) => rest.info.avgRating > 4
+                (rest) => rest.info.avgRating > 4.2
               );
               setfilteredRestList(TopRated);
             }}
           >
             Top Rated
           </button>
-          <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
+          <button className="bg-transparent border-2  shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
               const isVeg = restaurantList.filter(
                 (rest) => rest.info.veg === true
@@ -77,9 +79,15 @@ const Hero = () => {
           >
             Pure Veg
           </button>
-          <button className="bg-transparent border-2 border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
+          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4"
             onClick={() => {
-              console.log(restaurantList)
+              const deliveryTime = restaurantList.map((re)=>re.info.sla.deliveryTime)
+             
+              const sortDeliveryTime = deliveryTime.sort((a,b) => a - b)
+              const hi = restaurantList.map((rest)=>rest.info.sla)
+              const del = hi.filter((del)=>del.deliveryTime)
+            
+              console.log(del)
             }}
           >
             Less than Rs.300

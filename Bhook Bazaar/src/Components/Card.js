@@ -85,17 +85,17 @@ const Card = (props) =>{
     const { header, subHeader } = aggregatedDiscountInfoV3 || {};
 
     return(
-        <div className="w-[270px] group hover:shadow-lg rounded-xl hover:scale-90 transition-transform duration-200 ease-in-out cursor-pointer relative">
+        <div className="w-[220px] group hover: rounded-xl hover:scale-95 transition-transform ease-in cursor-pointer relative">
             <div className="relative">
                 <img
-                className="w-[270px] h-[180px] rounded-xl"
+                className="w-[220px] h-[140px] rounded-xl"
                 src={CARD_IMG_URL + resData.info.cloudinaryImageId}
                 alt={name}
                 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparen opacity-55 rounded-xl">
                     <div className="absolute bottom-0 left-0 right-0 text-white text-center py-2 px-2">
-                        <p className=" text-start text-2xl font-extrabold leading-6 text-white">{header} {subHeader}</p>
+                        <p className=" text-start text-lg font-black leading-6 text-white">{header} {subHeader}</p>
                     </div>
                 </div>
             </div>
