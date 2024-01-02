@@ -15,8 +15,8 @@ const ItemCategory = ({ item }) => {
   }
 
   return item.map((items) => (
-    <div key={items?.card?.info?.id} className="menu-card py-8 px-4 my-1 border-2 border-dotted">
-      <div className="menu-left">
+    <div key={items?.card?.info?.id} className="w-full flex justify-between items-start bg-white py-8 px-4 my-1 border-2 border-dotted">
+      <div className="w-[65%]">
         <span>
           {items?.card?.info?.itemAttribute?.vegClassifier == "NONVEG" ? (
             <img className="w-3" src={non_veg}></img>
@@ -63,9 +63,9 @@ const ItemCategory = ({ item }) => {
         </p>
         <p className="text-xs  text-gray-400 ">{items.card.info.description}</p>
       </div>
-      <div className="menu-right">
+      <div className="flex flex-col justify-center gap-1 items-center">
         {items.card.info.imageId ? (
-          <img
+          <img className="w-[150px] h-[100px] rounded-xl shadow-lg"
             style={{ color: "black" }}
             src={CARD_IMG_URL + items.card.info.imageId}
           ></img>
@@ -76,7 +76,7 @@ const ItemCategory = ({ item }) => {
             </span>
           </div>
         )}
-        <button id="addBtn" onClick={()=> handleAddItem(items)}>Add</button>
+        <button className="rounded-xl bg-slate-900 text-white font-semibold px-7 py-[6px]" onClick={()=> handleAddItem(items)}>Add</button>
       </div>
     </div>
   ));

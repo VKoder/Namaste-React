@@ -47,7 +47,7 @@ const Hero = () => {
 
  
   return (
-    <div className="hero px-12">
+    <div className="flex justify-between items-center flex-col px-12 my-10 w-full">
       <h1 className="w-full text-left px-12 pb-8  font-[1000] text-2xl tracking-normal ">
         Restaurants with online food delivery in Pune
       </h1>
@@ -94,18 +94,18 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="search">
+        <div>
           <input
             type="text"
             placeholder="Feeling Hungry?"
-            id="searchInp"
+            className="py-3 pr-24 pl-5 rounded-3xl text-sm border-2 border-gray-300"
             value={searchTxt}
             onChange={(e) => {
               setsearchTxt(e.target.value);
             }}
           ></input>
           <button
-            id="searchBtn"
+           className="py-3 px-6 border-none rounded-3xl text-base font-bold cursor-pointer bg-orange-400"
             onClick={() => {
               let filterSearch = restaurantList.filter((rest) =>
                 rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
@@ -117,7 +117,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="restraunt">
+      <div className="flex justify-start items-center flex-wrap gap-7 px-12 mt-12">
         {
           filteredRestList?.map((resItem) => (
             <Link to={"/restaurant/" + resItem.info.id} key={resItem.info.id}>

@@ -35,7 +35,7 @@ const MidCarousal = () => {
   }
 
   return (
-    <div className="slider px-12" ref={sliderRef}>
+    <div className="slider px-12 pt-3" ref={sliderRef}>
       <div className="w-full pb-5 pt-2">
         { carausal2data && <span className="text-2xl word-spacing-sm font-black">What's on your mind?</span>}
       </div>

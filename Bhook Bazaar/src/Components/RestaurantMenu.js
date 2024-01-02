@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
         <span className="text-[10px] text-gray-400 font-bold pr-1">/</span> 
         <span className="text-[10px] text-gray-600 font-bold pr-1">{restInfo.name}</span>
       </div>
-      <div className="rest-menu my-4 w-8/12 mx-auto">
+      <div className="h-full my-4 w-8/12 mx-auto">
       <RestaurantHeader restInfo={restInfo} />
 
       <div className="flex justify-start items-center flex-row gap-1 auto overflow-x-scroll space-x-4 p-4">

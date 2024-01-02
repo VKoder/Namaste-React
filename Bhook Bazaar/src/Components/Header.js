@@ -16,15 +16,15 @@ const Header = () => {
   const {theme} = useContext(themeContext)
 
   return (
-    <div className="header shadow-lg bg-white top-0 m-auto fixed">
-    <div className="hleft w-16">
+    <div className="h-[80px] w-full flex justify-between items-center overflow-hidden px-10 py-5 z-10 shadow-xl bg-white top-0 m-auto fixed">
+    <div className="rounded-sm py-5 w-[70px]">
     <Link to="/"><img src={logo}></img></Link>
     </div>
-    <div className="hright">
-      <div id="hr1">
-        <ul>
-          <li className="text-base font-semibold text-gray-600 tracking-wide hover:text-orange-400">{<Link to="/about"><i className="ri-pencil-line text-lg font-semibold text-gray-600 tracking-wide pr-2"></i>About</Link>}</li>
-          <li className="text-base font-semibold text-gray-600 tracking-wide  hover:text-orange-400">{<Link to="/contact"><i className="ri-customer-service-line text-lg font-semibold text-gray-600 tracking-wide pr-2"></i>Help</Link>}</li>
+    <div className="flex items-center justify-center flex-row">
+      <div className="flex justify-center items-center">
+        <ul className="flex items-center justify-center flex-row">
+          <li className="pr-12 text-base font-semibold text-gray-600 tracking-wide hover:text-orange-400">{<Link to="/about"><i className="ri-pencil-line text-lg font-semibold text-gray-600 tracking-wide pr-2"></i>About</Link>}</li>
+          <li className="pr-12 text-base font-semibold text-gray-600 tracking-wide  hover:text-orange-400">{<Link to="/contact"><i className="ri-customer-service-line text-lg font-semibold text-gray-600 tracking-wide pr-2"></i>Help</Link>}</li>
         </ul>
       </div>
       <div id="hr2">

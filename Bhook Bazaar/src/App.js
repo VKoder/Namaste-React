@@ -22,7 +22,7 @@ const AppLayout = () => (
   <Provider store={appStore}>
 <themeContext.Provider value={{theme: "Light"}}>
   <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
-  <div className="app">
+  <div className="app h-min w-[100%] mt-16 overflow-hidden">
     <Header />
     <Outlet/>
   </div>

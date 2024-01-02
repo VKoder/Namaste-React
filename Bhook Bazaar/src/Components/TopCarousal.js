@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Carousal1 } from "./Carousal";
-import ShimmerCarousal from "../Shimmers/ShimmerCarousal";
+
 import { REST_API } from "../Utils/constants";
 import { CORS_API } from "../Utils/constants";
 
@@ -35,7 +35,7 @@ const TopCarousal = () => {
 
   return (
     <div className="slider" ref={sliderRef}>
-      <div className="carausal-head">
+      <div className="flex justify-between flex-row items-center w-full">
         <h2>Best offers for you</h2>
         <div className="slider__nav">{/* buttons */}</div>
       </div>
