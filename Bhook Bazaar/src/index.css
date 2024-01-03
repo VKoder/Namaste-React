@@ -115,6 +115,6 @@
     min-width: calc((45% / 1) - 4rem);
   }
   .slider__item2 {
-    min-width: calc((16% / 1) - 2rem);
+    min-width: calc((16% / 1) - 3rem);
   }
 }

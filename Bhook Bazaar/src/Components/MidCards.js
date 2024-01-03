@@ -1,16 +1,12 @@
-import Card from "./Card";
 import { useEffect, useState } from "react";
-import ShimmerUI from "../Shimmers/ShimmerUI";
+import { CORS_API, REST_API } from "../Utils/constants";
+import Card from "./Card";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
-import { CORS_API } from "../Utils/constants";
-import { REST_API } from "../Utils/constants";
+import ShimmerUI from "../Shimmers/ShimmerUI";
 
-
-// HERO COMPONENT
-const Hero = () => {
-
-  const [restaurantList, setrestaurantList] = useState(null);
+const Offers = () => {
+   const [restaurantList, setrestaurantList] = useState(null);
   const [filteredRestList, setfilteredRestList] = useState(null);
 
 
@@ -27,8 +23,8 @@ const Hero = () => {
      const json = await data.json();
 
 
-      setrestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      setfilteredRestList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setrestaurantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setfilteredRestList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       console.log(json)
    };
 
@@ -47,9 +43,14 @@ const Hero = () => {
 
  
   return (
-    <div className="flex justify-between items-center flex-col px-16 my-10 w-full">
+    <div className="flex justify-between items-center flex-col px-16 my-8 w-full">
+        <div className="w-11/12 pb-5">
+        <Link to={"/"}><span className="text-[10px] text-gray-400 font-bold pr-1">Home</span></Link>
+        <span className="text-[10px] text-gray-400 font-bold pr-1">/</span> 
+        <span className="text-[10px] text-gray-600 font-bold pr-1">Offers</span>
+      </div>
       <span className="w-full text-left px-12 pb-8  font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
-        Restaurants with online food delivery in Pune
+      Restaurants With Great Offers Near Me
       </span>
       <div className="w-full heroupper flex justify-between items-center px-12">
         <div className="heroleft flex justify-between items-center">
@@ -134,4 +135,4 @@ const Hero = () => {
     </div>
   );
 };
-export default Hero;
+export default Offers;

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { CORS_API } from "../Utils/constants";
 import { useParams } from "react-router-dom";
-import Card from "./Card";
 import ShimmerUI from "../Shimmers/ShimmerUI";
 import { CARD_IMG_URL } from "../Utils/constants";
-import { ITEM_API } from "../Utils/constants";
 
 const ItemsMenu = () => {
   const [restaurantList, setrestaurantList] = useState(null);

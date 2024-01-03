@@ -13,6 +13,7 @@ import themeContext from "./themeContext";
 import { Provider } from "react-redux";
 import appStore from "./Redux Store/appStore";
 import Cart from "./Components/Cart";
+import MidCards from "./Components/MidCards";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -22,7 +23,7 @@ const AppLayout = () => (
   <Provider store={appStore}>
 <themeContext.Provider value={{theme: "Light"}}>
   <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
-  <div className="app h-min w-[100%] mt-16 overflow-hidden">
+  <div className="app h-full w-full mt-20 overflow-hidden">
     <Header />
     <Outlet/>
   </div>
@@ -75,6 +76,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/Cart",
         element: <Cart />,
+      },
+      {
+        path: "/offers",
+        element: <MidCards />,
       },
     ],
   },

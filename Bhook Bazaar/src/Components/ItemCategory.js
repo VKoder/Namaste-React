@@ -5,8 +5,6 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../Redux Store/cartSlice";
 
 const ItemCategory = ({ item }) => {
-  // console.log(item)
-  // const { itemCards } = item;
 
   const dispatch = useDispatch()
 
@@ -32,7 +30,7 @@ const ItemCategory = ({ item }) => {
           </span>
         )}
 
-        <h3 className="text-sm font-bold text-slate-900 pt-2">
+        <h3 className="text-base font-bold text-slate-900 pt-2">
           {items.card.info.name}
         </h3>
         <p className="font-semibold text-slate-800 pb-2 price">
@@ -61,7 +59,7 @@ const ItemCategory = ({ item }) => {
             </span>
           </span>
         </p>
-        <p className="text-xs  text-gray-400 ">{items.card.info.description}</p>
+        <p style={{wordSpacing:1.5}} className="text-[14px]  text-gray-400 ">{items.card.info.description}</p>
       </div>
       <div className="flex flex-col justify-center gap-1 items-center">
         {items.card.info.imageId ? (

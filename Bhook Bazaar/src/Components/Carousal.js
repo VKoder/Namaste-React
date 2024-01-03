@@ -1,7 +1,6 @@
-import ShimmerMidCarousal from "../Shimmers/ShimmerMidCarousal";
 import { CARD_IMG_URL } from "../Utils/constants";
 
-export  const Carousal1 = (props) => {
+export  const Carousal0 = (props) => {
   const { restData } = props;
   return (
     <div className="slider__item">
@@ -15,7 +14,7 @@ export  const Carousal1 = (props) => {
 };
 
 
-export  const Carousal2 = (props) => {
+export  const Carousal1 = (props) => {
   const { restData } = props;
   return (
     <div className="slider__item2">
@@ -27,4 +26,5 @@ export  const Carousal2 = (props) => {
     </div>
   );
 };
+
 
