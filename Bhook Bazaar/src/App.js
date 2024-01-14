@@ -14,6 +14,9 @@ import { Provider } from "react-redux";
 import appStore from "./Redux Store/appStore";
 import Cart from "./Components/Cart";
 import MidCards from "./Components/MidCards";
+import Footer from "./Components/Footer";
+import Grocery from "./Components/Grocery/Grocery";
+import MenuFooter from "./Components/MenuFooter";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -23,9 +26,11 @@ const AppLayout = () => (
   <Provider store={appStore}>
 <themeContext.Provider value={{theme: "Light"}}>
   <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
-  <div className="app h-full w-full mt-20 overflow-hidden">
+  <div className="app h-full w-full overflow-hidden">
     <Header />
     <Outlet/>
+    <MenuFooter/>
+    <Footer/>
   </div>
   </userContext.Provider>
   </themeContext.Provider>
@@ -80,6 +85,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/offers",
         element: <MidCards />,
+      },
+      {
+        path: "/grocery",
+        element: <Grocery />,
+      },
+      {
+        path: "/grocery-store",
+        element: <Hero />,
       },
     ],
   },

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import { CORS_API } from "../Utils/constants";
 import { REST_API } from "../Utils/constants";
+import CuisinesCards from "./CuisinesCards";
 
 
 // HERO COMPONENT
@@ -12,9 +13,10 @@ const Hero = () => {
 
   const [restaurantList, setrestaurantList] = useState(null);
   const [filteredRestList, setfilteredRestList] = useState(null);
-
-
+  const [bestcuisines, setbestcuisines] = useState(null);
+  const [bestrest, setbestrest] = useState(null);
   const [searchTxt, setsearchTxt] = useState("");
+  const [filter, setfilter] = useState(false)
 
   const OnlineStatus = useOnlineStatus();
 
@@ -29,9 +31,14 @@ const Hero = () => {
 
       setrestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setfilteredRestList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      console.log(json)
+      setbestcuisines(json?.data?.cards[7]?.card?.card)
+      setbestrest(json?.data?.cards[6]?.card?.card)
+    
    };
 
+   const filterToggle = () =>{
+    setfilter(!filter)
+   }
 
   if (OnlineStatus === false) {
     return <h2>Your Offline</h2>;
@@ -45,21 +52,32 @@ const Hero = () => {
     return <h1>Something went wrg</h1>
   }
 
+  const filterBtnCss = "bg-transparent border-2 shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
  
   return (
-    <div className="flex justify-between items-center flex-col px-16 my-10 w-full">
-      <span className="w-full text-left px-12 pb-8  font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
+    <div className="flex justify-between items-center   flex-col px-3 my-2 w-full lg:px-16 lg:my-10">
+      <span className="w-full text-left pb-2 font-black text-lg tracking-tight lg:px-2 lg:pb-8 lg:text-2xl" style={{wordSpacing:3.5}} >
         Restaurants with online food delivery in Pune
       </span>
-      <div className="w-full heroupper flex justify-between items-center px-12">
+      <div className="w-full heroupper flex justify-between items-center lg:px-12">
         <div className="heroleft flex justify-between items-center">
+   
+     
+        <button className="bg-transparent border-2 sm:hidden shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
+           onClick={filterToggle}
+          >
+         <i class="ri-equalizer-fill"></i>
+          </button>
+          { filter && <div className="absolute translate-x-2/4 translate-y-3/4 rounded-lg bg-orange-200 h-28">hii</div>
+}
+        
 
-          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 text-sm md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm "
+          <button className={filterBtnCss}
            onClick={()=>{setfilteredRestList(restaurantList)}}
           >
            All
           </button>
-          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm"
+          <button className={filterBtnCss}
             onClick={() => {
               const TopRated = restaurantList.filter(
                 (rest) => rest.info.avgRating > 4.2
@@ -69,7 +87,7 @@ const Hero = () => {
           >
             Top Rated
           </button>
-          <button className="bg-transparent border-2  shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm"
+          <button className={filterBtnCss}
             onClick={() => {
               const isVeg = restaurantList.filter(
                 (rest) => rest.info.veg === true
@@ -79,7 +97,8 @@ const Hero = () => {
           >
             Pure Veg
           </button>
-          <button className="bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm"
+          {/* bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm */}
+          <button className="bg-transparent border-2 hidden sm:flex shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4" 
             onClick={() => {
               const deliveryTime = restaurantList.map((re)=>re.info.sla.deliveryTime)
              
@@ -94,7 +113,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div>
+        <div className="hidden">
           <input
             type="text"
             placeholder="Feeling Hungry?"
@@ -117,7 +136,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="flex justify-start items-center flex-wrap gap-7 px-12 mt-12">
+      <div className="flex justify-center lg:justify-start items-center  flex-wrap gap-7 my-2 px-12 mt-12 ">
         {
           filteredRestList?.map((resItem) => (
             <Link to={"/restaurant/" + resItem.info.id} key={resItem.info.id}>
@@ -131,6 +150,23 @@ const Hero = () => {
           )) // Iteratedly store restraunt Obj into resData which is a parameter of card!
         }
       </div>
+     
+      <div className="flex justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8">
+      <span className="w-full text-left  pb-8 font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
+       {bestcuisines.title}
+      </span>
+      <div className="mt-3 flex justify-start items-start gap-4 flex-wrap flex-row">  <CuisinesCards data={bestcuisines}/></div>
+    </div>
+   
+    
+    <div className="flex justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8">
+      <span className="w-full text-left  pb-8 font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
+       {bestrest.title}
+      </span>
+      <div className="mt-3 flex justify-start items-start gap-4 flex-wrap flex-row">  <CuisinesCards data={bestrest}/></div>
+    </div>
+
+
     </div>
   );
 };

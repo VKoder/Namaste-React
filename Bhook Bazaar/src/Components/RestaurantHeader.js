@@ -1,4 +1,6 @@
+
 import { CARD_IMG_URL } from "../Utils/constants";
+import { CORS_API } from "../Utils/constants";
 const RestaurantHeader = ({ restInfo }) => {
   //Destructing
   const {
@@ -11,6 +13,9 @@ const RestaurantHeader = ({ restInfo }) => {
     totalRatingsString,
   } = restInfo;
   const { slaString, lastMileTravelString } = restInfo.sla;
+
+
+
 
   return (
     <div>
