@@ -69,7 +69,7 @@ const ItemCategory = ({ item }) => {
           ></img>
         ) : (
           <div className="lg:w-40 lg:h-32 md:w-40 md:h-32 w-24 h-16 bg-slate-200 rounded-lg stroke animate relative">
-            <span className="text-sm font-semibold text-gray-500 absolute top-10 left-12 ">
+            <span className="lg:text-sm text-[10px] md:text-sm lg:font-semibold font-semibold md:font-semibold text-gray-500 absolute lg:top-10 lg:left-12 md:top-10 top-4 left-7 md:left-12 ">
               No Image Available
             </span>
           </div>

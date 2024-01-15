@@ -1,14 +1,14 @@
 import logo from "../Images/Logo.png";
  
 const Footer = () => {
-    const LiCss = "font-normal text-base pt-3 text-zinc-400 tracking-wide cursor-pointer"
-    const titleCss = "font-extrabold text-lg text-gray-50 tracking-wide pb-4"
+    const LiCss = "font-normal lg:text-base md:text-base text-xs lg:pt-3 md:pt-3 pt-2 text-zinc-400 lg:tracking-wide tracking-wider md:tracking-wide  cursor-pointer"
+    const titleCss = "font-extrabold lg:text-lg md:text-lg text-base text-gray-50 tracking-wide lg:pb-4 md:pb-4 pb-2"
 
     return (
-        <div className="flex justify-center items-start lg:px-12  md:px-12 px-4 lg:flex-row md:flex-row flex-row bg-black lg:gap-10 md:gap-10 gap-4 lg:w-12/12 md:w-12/12 w-12/12 lg:py-16 md:py-16 py-6 flex-wrap">
-            <div className=" lg:w-3/12 w-6/12 md:w-3/12 ">
+        <div className="flex justify-center items-start lg:px-12  md:px-12 px-4 lg:flex-row md:flex-row flex-row bg-black lg:gap-10 md:gap-10 gap-16 lg:w-12/12 md:w-12/12 w-12/12 lg:py-16 md:py-16 py-10 pb-20 flex-wrap">
+            <div className=" lg:w-3/12 w-4/12 md:w-3/12 ">
                 <div className="flex justify-center items-center flex-col gap-2">
-                <img className="lg:w-40 w-20 md:w-40" src={logo}></img><span className="font-extrabold text-lg text-gray-50 tracking-wide">Foody Hub</span>
+                <img className="lg:w-40 w-20 md:w-40" src={logo}></img><span className="font-extrabold lg:text-lg md:text-lg text-base text-gray-50 tracking-wide">Foody Hub</span>
                 <span className={LiCss}>©2024 Technologies Pvt. Ltd</span>
                 </div>
             </div>

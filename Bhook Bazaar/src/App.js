@@ -12,11 +12,11 @@ import userContext from "./Utils/userContext";
 import themeContext from "./themeContext";
 import { Provider } from "react-redux";
 import appStore from "./Redux Store/appStore";
-import Cart from "./Components/Cart";
-import MidCards from "./Components/MidCards";
+import Offers from "./Components/Offers";
 import Footer from "./Components/Footer";
 import Grocery from "./Components/Grocery/Grocery";
 import MenuFooter from "./Components/MenuFooter";
+import Cart from "./Components/Cart"
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -84,7 +84,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/offers",
-        element: <MidCards />,
+        element: <Offers />,
       },
       {
         path: "/grocery",

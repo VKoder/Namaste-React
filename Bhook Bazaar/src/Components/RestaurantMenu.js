@@ -25,7 +25,7 @@ const RestaurantMenu = () => {
         <span className={linksCss}>/</span> 
         <span className={linksCss}>Pune</span>   
         <span className={linksCss}>/</span> 
-        <span className={linksCss}>{restInfo.name}</span>
+        <span className="lg:text-[10px] md:text-[10px] text-[8px] text-gray-700 font-bold pr-1">{restInfo.name}</span>
       </div>
       <div className="h-full lg:my-4 md:my-4 my-2 lg:w-8/12 md:w-8/12 w-10/12 mx-auto">
       <RestaurantHeader restInfo={restInfo} />

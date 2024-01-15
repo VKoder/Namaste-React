@@ -78,8 +78,8 @@ const Header = () => {
         </div>
       </div>
       {menu && (
-        <div className="bg-slate-900 ">
-          <div className="py-20">hi hello</div>
+        <div className="bg-gray-200 ">
+          <div className="py-20 w-full m-auto text-center">Currently Dummy Data</div>
         </div>
       )}
     </div>
