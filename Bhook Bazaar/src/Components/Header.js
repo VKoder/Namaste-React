@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import logo from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -8,7 +8,6 @@ import { useState } from "react";
 const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const [menu, setmenu] = useState(false);
-  const [Search, setSearch] = useState(false);
 
   const handlemenu = () => {
     setmenu(!menu);
@@ -73,19 +72,11 @@ const Header = () => {
               </Link>
             </ul>
           </div>
-          <div className="hidden sm:flex lg:hidden">
+          <div className="lg:hidden">
             {menu ? <button onClick={handlemenu}><i class="ri-close-fill text-xl font-bold"></i></button> : <button onClick={handlemenu}><i class="ri-menu-line text-xl font-bold"></i></button>}
-          </div>
-          <div className="sm:hidden flex justify-center items-center flex-row">
-            {Search ? <button onClick={searchToggle}><i class="ri-close-fill text-xl font-bold"></i></button> : <button onClick={searchToggle}><i class="ri-search-line text-xl font-bold"></i></button>}
           </div>
         </div>
       </div>
-      {Search && (
-        <div className="bg-red-800">
-          <div className="py-20">hi hello</div>
-        </div>
-      )}
       {menu && (
         <div className="bg-slate-900 ">
           <div className="py-20">hi hello</div>

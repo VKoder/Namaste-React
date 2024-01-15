@@ -13,13 +13,13 @@ const ItemCategory = ({ item }) => {
   }
 
   return item.map((items) => (
-    <div key={items?.card?.info?.id} className="w-full flex justify-between items-start bg-white py-8 px-4 my-1 border-2 border-dotted">
-      <div className="w-[65%]">
+    <div key={items?.card?.info?.id} className="w-full flex justify-between items-start bg-white lg:py-8 lg:px-4 md:py-8 md:px-4  py-4 px-2 my-1 border-2 border-dotted">
+      <div className="lg:w-[65%] md:w-[65%] w-[70%]">
         <span>
           {items?.card?.info?.itemAttribute?.vegClassifier == "NONVEG" ? (
-            <img className="w-3" src={non_veg}></img>
+            <img className="lg:w-3 md:w-3 w-3" src={non_veg} alt="Non Veg"></img>
           ) : (
-            <img className="w-5" src={veg}></img>
+            <img className="lg:w-5 md:w-5 w-4" src={veg} alt="Veg"></img>
           )}
         </span>
         {items?.card?.info?.ribbon?.text && (
@@ -30,7 +30,7 @@ const ItemCategory = ({ item }) => {
           </span>
         )}
 
-        <h3 className="text-base font-bold text-slate-900 pt-2">
+        <h3 className="lg:text-base md:text-base text-sm font-bold text-slate-900 pt-2">
           {items.card.info.name}
         </h3>
         <p className="font-semibold text-slate-800 pb-2 price">
@@ -59,22 +59,22 @@ const ItemCategory = ({ item }) => {
             </span>
           </span>
         </p>
-        <p style={{wordSpacing:1.5}} className="text-[14px]  text-gray-400 ">{items.card.info.description}</p>
+        <p style={{wordSpacing:1.5}} className="lg:text-[14px] md:text-[14px] text-[9px] tracking-wide text-gray-400 ">{items.card.info.description}</p>
       </div>
       <div className="flex flex-col justify-center gap-1 items-center">
         {items.card.info.imageId ? (
-          <img className="w-[150px] h-[100px] rounded-xl shadow-lg"
+          <img className="lg:w-[150px] lg:h-[100px] md:w-[150px] md:h-[100px] w-[100px] h-[70px] rounded-xl shadow-lg"
             style={{ color: "black" }}
             src={CARD_IMG_URL + items.card.info.imageId}
           ></img>
         ) : (
-          <div className="w-40 h-32 bg-slate-200 rounded-lg stroke animate relative">
+          <div className="lg:w-40 lg:h-32 md:w-40 md:h-32 w-24 h-16 bg-slate-200 rounded-lg stroke animate relative">
             <span className="text-sm font-semibold text-gray-500 absolute top-10 left-12 ">
               No Image Available
             </span>
           </div>
         )}
-        <button className="rounded-xl bg-slate-900 text-white font-semibold px-7 py-[6px]" onClick={()=> handleAddItem(items)}>Add</button>
+        <button className="rounded-xl bg-slate-900 text-white font-semibold lg:px-7 text-sm lg:text-base lg:py-[6px] md:px-7 md:py-[6px] px-4 py-[3px]" onClick={()=> handleAddItem(items)}>Add</button>
       </div>
     </div>
   ));

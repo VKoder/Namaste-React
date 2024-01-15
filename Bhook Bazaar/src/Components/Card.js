@@ -10,10 +10,10 @@ const Card = (props) =>{
     const { header, subHeader } = aggregatedDiscountInfoV3 || {};
 
     return(
-        <div className="w-full md:w-[220px] group hover: rounded-xl hover:scale-95 transition-transform ease-in cursor-pointer relative">
+        <div className="w-[300px] lg:w-[220px] md:w-[220px] group hover: rounded-xl hover:scale-95 transition-transform ease-in cursor-pointer relative">
             <div className="relative">
                 <img
-                className="w-full h-[140px] md:h-[140px] rounded-xl"
+                className="w-full h-[210px] lg:h-[140px] md:h-[140px]  rounded-xl"
                 src={CARD_IMG_URL + resData.info.cloudinaryImageId}
                 alt={name}
                 

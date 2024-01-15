@@ -23,13 +23,17 @@ const useRestaurantMenu = (id) => {
         (cat) =>
           cat?.card?.card?.["@type"] ===
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      ) || json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (cat) =>
+          cat?.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     setrestMenu(Category);
 
-    setrestInfo(json?.data?.cards[0]?.card?.card?.info);
+    setrestInfo(json?.data?.cards[0]?.card?.card?.info || json?.data?.cards[2]?.card?.card?.info);
     console.log(json)
     setrestOff(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers || json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers
     );
   };
   return { restInfo, restMenu, restOff };

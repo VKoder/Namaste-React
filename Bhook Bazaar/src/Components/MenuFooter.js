@@ -7,7 +7,7 @@ const MenuFooter = () => {
 
    
   return (
-    <div className="w-full flex justify-evenly items-center fixed bottom-0 z-10 flex-row bg-white sm:hidden py-1 px-2 shadow-lg">
+    <div className="w-full flex justify-evenly items-center fixed bottom-0 z-10 flex-row bg-white lg:hidden py-1 px-2 shadow-lg lg:shadow-xl">
       <Link to={"/about"}>
         <div className={linkCss}>
           <i className="ri-pencil-line text-xl font-bold"></i>

@@ -55,11 +55,11 @@ const Hero = () => {
   const filterBtnCss = "bg-transparent border-2 shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
  
   return (
-    <div className="flex justify-between items-center   flex-col px-3 my-2 w-full lg:px-16 lg:my-10">
-      <span className="w-full text-left pb-2 font-black text-lg tracking-tight lg:px-2 lg:pb-8 lg:text-2xl" style={{wordSpacing:3.5}} >
+    <div className="flex justify-between items-center  flex-col lg:px-16 lg:my-10 md:px-16 px-6 my-8 md:my-10 w-full ">
+      <span className="w-full text-left lg:pb-6 lg:px-16 md:pb-6 md:px-16 mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight " style={{wordSpacing:3.5}} >
         Restaurants with online food delivery in Pune
       </span>
-      <div className="w-full heroupper flex justify-between items-center lg:px-12">
+      <div className="w-full heroupper flex justify-between items-center lg:px-16 md:px-16 lg:my-1 md:my-2 my-4">
         <div className="heroleft flex justify-between items-center">
    
      
@@ -68,7 +68,13 @@ const Hero = () => {
           >
          <i class="ri-equalizer-fill"></i>
           </button>
-          { filter && <div className="absolute translate-x-2/4 translate-y-3/4 rounded-lg bg-orange-200 h-28">hii</div>
+          { filter && 
+          <div className="absolute top-40 rounded-lg bg-white shadow-sm border-l-2 py-3 px-2 z-10 border-orange-400">
+            <div className="flex justify-start items-start flex-col">
+              <span>Pizza</span>
+              <span>Dominos</span>
+              </div>
+            </div>
 }
         
 
@@ -113,18 +119,18 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="hidden">
+        <div className="hidden sm:flex">
           <input
             type="text"
             placeholder="Feeling Hungry?"
-            className="py-3 pr-24 pl-5 rounded-3xl text-sm border-2 border-gray-300  "
+            className="lg:py-3 lg:pr-24 md:pr-10 lg:pl-5 rounded-3xl lg:text-sm py-1 pr-16 pl-2 text-xs border-2 border-gray-300  "
             value={searchTxt}
             onChange={(e) => {
               setsearchTxt(e.target.value);
             }}
           ></input>
           <button
-           className="py-3 px-6 border-none rounded-3xl text-base font-bold cursor-pointer bg-orange-400"
+           className="lg:py-3 lg:px-6 py-1 px-2 border-none rounded-3xl lg:text-base text-sm font-bold cursor-pointer bg-orange-400"
             onClick={() => {
               let filterSearch = restaurantList.filter((rest) =>
                 rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
@@ -151,7 +157,7 @@ const Hero = () => {
         }
       </div>
      
-      <div className="flex justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8">
+      <div className=" justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8 hidden lg:flex">
       <span className="w-full text-left  pb-8 font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
        {bestcuisines.title}
       </span>
@@ -159,7 +165,7 @@ const Hero = () => {
     </div>
    
     
-    <div className="flex justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8">
+    <div className=" justify-between items-start flex-col my-5 px-12 w-12/12 border-t-2 pt-8 hidden lg:flex">
       <span className="w-full text-left  pb-8 font-black text-2xl tracking-tight" style={{wordSpacing:3.5}} >
        {bestrest.title}
       </span>
