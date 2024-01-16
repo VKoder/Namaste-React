@@ -55,8 +55,8 @@ const Hero = () => {
   const filterBtnCss = "bg-transparent border-2 shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
  
   return (
-    <div className="flex justify-between items-center  flex-col lg:px-16 lg:my-10 md:px-16 px-6 my-8 md:my-10 w-full ">
-      <span className="w-full text-left lg:pb-6 lg:px-16 md:pb-6 md:px-16 mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight " style={{wordSpacing:3.5}} >
+    <div className="flex justify-between items-center  flex-col lg:px-16 lg:my-10 md:px-16 px-6 my-2 md:my-5 w-full ">
+      <span className="w-full  text-left lg:pb-6 lg:px-12 md:pb-6 md:px-12 mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight " style={{wordSpacing:3.5}} >
         Restaurants with online food delivery in Pune
       </span>
       <div className="w-full heroupper flex justify-between items-center lg:px-16 md:px-16 lg:my-1 md:my-2 my-4">

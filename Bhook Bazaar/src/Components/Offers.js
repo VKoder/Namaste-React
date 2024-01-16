@@ -57,13 +57,13 @@ const Offers = () => {
  
   return (
     <div className="flex justify-between items-center  flex-col lg:px-16 lg:my-10 md:px-16 px-6 my-8 md:my-10 w-full ">
-      <div className="lg:w-full lg:px-16 md:w-full md:px-16 w-full  text-left mx-auto lg:pt-5 md:pt-4 pt-2">
+      <div className="lg:w-full lg:px-12 md:w-full md:px-12 w-full  text-left mx-auto lg:pt-5 md:pt-4 pt-2">
         <Link to={"/"}><span className={linksCss}>Home</span></Link>
         <span className={linksCss}>/</span> 
         <span className="lg:text-[10px] md:text-[10px] text-[8px] text-gray-700 font-bold pr-1">Offfers</span>   
         
       </div>
-      <span className="w-full text-left lg:pb-6 lg:px-16 md:pb-6 md:px-16 mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight " style={{wordSpacing:3.5}} >
+      <span className="w-full text-left lg:pb-6 lg:px-12 md:pb-6 md:px-12 mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight " style={{wordSpacing:3.5}} >
         Restaurants with online food delivery in Pune
       </span>
       <div className="w-full heroupper flex justify-between items-center lg:px-16 md:px-16 lg:my-1 md:my-2 my-4">

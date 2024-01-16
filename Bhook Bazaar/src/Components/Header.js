@@ -2,7 +2,8 @@ import {  useState } from "react";
 import logo from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { CORS_API } from "../Utils/constants";
 
 // HEADER COMPONENT
 const Header = () => {
@@ -19,6 +20,15 @@ const Header = () => {
 
   const spanCsss = "pr-12 lg:pr-6 lg:text-sm xl:pr-12 xl:text-base font-bold"
   const linkCss = "  text-gray-600 hover:text-orange-300"
+
+  useEffect(()=>{
+    fetchData()
+})
+const fetchData = async()=>{
+    const data = await fetch(CORS_API + "https://api.prod.astrotalk.in/AstroTalk/media/partner/get?pageNo=0&pageSize=25&isAdmin=false")
+    const json = await data.json()
+    console.log(json)
+}
 
   return (
     <div className="flex flex-col justify-center mb-16 sm:mb-20 md:mb-20 lg:mb-24 xl:mb-24">

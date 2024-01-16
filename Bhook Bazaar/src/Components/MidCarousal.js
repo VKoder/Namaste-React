@@ -36,13 +36,13 @@ const MidCarousal = () => {
   }
 
  return (
-    carausal1data && <div className="slider px-16 pt-3" ref={sliderRef}>
-      <div className="w-full pb-5 pt-2">
-        { carausal1data && <span className="text-2xl font-black tracking-tight" style={{wordSpacing:3}}>What's on your mind?</span>}
+    carausal1data && <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3" ref={sliderRef}>
+      <div className="w-full lg:pb-2 md:pb-2 pb-2 pt-2">
+        { carausal1data && <span className="w-full text-left lg:pb-6  md:pb-6  mt-4 font-black lg:text-2xl md:text-2xl text-xl tracking-tight" style={{wordSpacing:3}}>What's on your mind?</span>}
       </div>
 
      
-      <div className="slider__content">
+      <div className="slider__content md:pt-3  pt-2">
         {
         carausal1data?.map((rest) => (
           // <Link to={rest?.entityId} key={rest.id}>
