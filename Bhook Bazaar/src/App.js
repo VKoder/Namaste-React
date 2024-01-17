@@ -1,37 +1,34 @@
-import React, { lazy , Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
-
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import MidCarousal from "./Components/MidCarousal";
 import ItemsMenu from "./Components/ItemsMenu";
 import userContext from "./Utils/userContext";
-
 import { Provider } from "react-redux";
 import appStore from "./Redux Store/appStore";
 import Offers from "./Components/Offers";
 import Footer from "./Components/Footer";
 import Grocery from "./Grocery/Grocery";
 import MenuFooter from "./Components/MenuFooter";
-import Cart from "./Components/Cart"
+import Cart from "./Components/Cart";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
 
-
 const AppLayout = () => (
   <Provider store={appStore}>
-  <userContext.Provider value={{loggedInUser: "Akshay Saini"}}>
-  <div className="app h-full w-full overflow-hidden">
-    <Header />
-    <Outlet/>
-    <MenuFooter/>
-    <Footer/>
-  </div>
-  </userContext.Provider>
+    <userContext.Provider value={{ loggedInUser: "Akshay Saini" }}>
+      <div className="app h-full w-full overflow-hidden">
+        <Header />
+        <Outlet />
+        <MenuFooter />
+        <Footer />
+      </div>
+    </userContext.Provider>
   </Provider>
 );
 
@@ -46,7 +43,7 @@ const appRouter = createBrowserRouter([
         element: (
           <>
             {/* <TopCarousal /> */}
-            <MidCarousal/>
+            <MidCarousal />
             <Hero />
           </>
         ),
@@ -64,13 +61,13 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <Contact/>
+            <Contact />
           </Suspense>
         ),
       },
       {
         path: "/restaurant/:id",
-        element: <RestaurantMenu />, 
+        element: <RestaurantMenu />,
       },
       {
         path: "ItemsMenu/:id",

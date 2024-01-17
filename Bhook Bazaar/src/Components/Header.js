@@ -25,8 +25,8 @@ const Header = () => {
     fetchData()
 })
 const fetchData = async()=>{
-    const data = await fetch(CORS_API + "https://api.prod.astrotalk.in/AstroTalk/media/partner/get?pageNo=0&pageSize=25&isAdmin=false")
-    const json = await data.json()
+    const data = await fetch(CORS_API + "https://api.zepto.co.in/api/v3/inventory/catalogue/store-products/?subcategory_id=eab29ba4-6fd1-4f44-962b-586892a9384e&page_number=1&store_id=261b9c45-eb5b-4398-be1c-909ccde6f629")
+          const json = await data.json()
     console.log(json)
 }
 

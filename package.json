@@ -30,6 +30,11 @@
     "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@testing-library/react": "^14.1.2",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
     "parcel": "^2.10.2",
     "postcss": "^8.4.32",
     "process": "^0.11.10",
