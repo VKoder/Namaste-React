@@ -7,3 +7,5 @@ export const REST_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.
 export const CORS_API = "https://thingproxy.freeboard.io/fetch/";
 
 export const ITEM_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.447523597754362&lng=73.85565485805273&collection="
+
+export const GROCERY_INFO_API = "https://www.swiggy.com/api/instamart/item/";
