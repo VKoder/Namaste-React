@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1705518632519" clover="3.2.0">
-  <project timestamp="1705518632519" name="All files">
+<coverage generated="1705577362660" clover="3.2.0">
+  <project timestamp="1705577362660" name="All files">
     <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="6" coveredelements="6" complexity="0" loc="4" ncloc="4" packages="1" files="2" classes="2"/>
     <file name="Contact.js" path="C:\Users\khule\OneDrive\Documents\Desktop\Namaste React\Bhook Bazaar\src\Components\Contact.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

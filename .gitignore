@@ -1,6 +1,6 @@
-node_modules
+/node_modules
 .parcel-cache
-dist
+/dist
 appinfo.text
 aboutapp.txt
-coverage
+/coverage
