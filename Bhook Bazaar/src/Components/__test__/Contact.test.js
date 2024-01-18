@@ -1,5 +1,5 @@
 import Contact from "../Contact"
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 
 
@@ -9,5 +9,13 @@ it("Should load Contact Component", ()=>{
     const heading = screen.getByRole("heading");
 
     //Assertion
-    expect(heading).toBe
+    expect(heading).toBeInTheDocument();
 })
+
+it("Should include button in Contact Component", ()=>{
+    render(<Contact/>)
+
+    const button = screen.getByText("Submit")
+    expect(button).toBeInTheDocument();
+})
+

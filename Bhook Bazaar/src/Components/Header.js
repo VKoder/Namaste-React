@@ -1,8 +1,7 @@
-import {  useState } from "react";
+import {  useState, useEffect } from "react";
 import logo from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
 import { CORS_API } from "../Utils/constants";
 
 // HEADER COMPONENT
