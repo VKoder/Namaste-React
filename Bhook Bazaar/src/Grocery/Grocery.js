@@ -1,11 +1,9 @@
+import GroceryTop from "./GroceryTop";
 
-
-const Grocery = () => {
-
- 
+const Grocery = ()=>{
     return (
         <div>
-       fd
+            <GroceryTop/>
         </div>
     )
 }

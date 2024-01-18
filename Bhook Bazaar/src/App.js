@@ -15,6 +15,7 @@ import Footer from "./Components/Footer";
 import Grocery from "./Grocery/Grocery";
 import MenuFooter from "./Components/MenuFooter";
 import Cart from "./Components/Cart";
+import GroceryData from "./Grocery/GroceryData";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -86,8 +87,8 @@ const appRouter = createBrowserRouter([
         element: <Grocery />,
       },
       {
-        path: "/grocery-store",
-        element: <Hero />,
+        path: "/groceryInfo/:id",
+        element: <GroceryData />,
       },
     ],
   },

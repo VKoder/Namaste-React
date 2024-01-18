@@ -24,7 +24,7 @@ const Header = () => {
     fetchData()
 })
 const fetchData = async()=>{
-    const data = await fetch(CORS_API + "https://api.zepto.co.in/api/v3/inventory/catalogue/store-products/?subcategory_id=eab29ba4-6fd1-4f44-962b-586892a9384e&page_number=1&store_id=261b9c45-eb5b-4398-be1c-909ccde6f629")
+    const data = await fetch(CORS_API + "https://www.swiggy.com/api/instamart/home?pageNo=2&layoutId=3173&storeId=1383574&clientId=INSTAMART-APP")
           const json = await data.json()
     console.log(json)
 }
