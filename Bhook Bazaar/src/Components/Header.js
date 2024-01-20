@@ -24,7 +24,7 @@ const Header = () => {
     fetchData()
 })
 const fetchData = async()=>{
-    const data = await fetch(CORS_API + "https://www.swiggy.com/api/instamart/home?pageNo=2&layoutId=3173&storeId=1383574&clientId=INSTAMART-APP")
+    const data = await fetch(CORS_API + "https://www.swiggy.com/api/instamart/campaign/mxn?layoutId=2586&limit=40&pageNo=1&serviceLine=INSTAMART&customerPage=STORES_MxN_18&storeId=1383574")
           const json = await data.json()
     console.log(json)
 }

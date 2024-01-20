@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CORS_API } from "../Utils/constants";
 import { CARD_IMG_URL } from "../Utils/constants";
+import { Link } from "react-router-dom";
 
 const GroceryTopCarousal = () => {
   const [groceryList, setgroceryList] = useState(null);
@@ -36,7 +37,11 @@ const GroceryTopCarousal = () => {
         {
             groceryList?.map((gros)=> 
                 <div>
-                    <img className="lg:w-24 sm:w-20 w-14 md:w-24" src={CARD_IMG_URL + gros.creativeId}></img>
+                  {
+                    <Link to={"/groceryShop/" + gros?.entityId}>
+                   <img className="lg:w-24 sm:w-20 w-14 md:w-24" src={CARD_IMG_URL + gros.creativeId}></img>
+                   </Link>
+                  }
                 </div>
             )
         }
