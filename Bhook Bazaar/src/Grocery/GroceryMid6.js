@@ -20,16 +20,21 @@ const GroceryMid6 = () => {
       const json = await data.json();
       console.log(json)
       setgroceryList(json?.data?.widgets?.[1]?.data)
-      setgroceryTitle(json?.data?.widgets?.[1]?.widgetInfo?.title)
+      setgroceryTitle(json?.data?.widgets?.[1]?.widgetInfo)
     };
   
 
     return (
         <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">
         <div className="flex justify-between items-center flex-row">
-          <span className="lg:text-xl text-lg md:text-xl font-extrabold px-2 text-gray-950">
-            {groceryTitle}
+        <div className="flex justify-start items-start flex-col">
+        <span className="lg:text-xl text-base sm:text-lg md:text-xl font-extrabold px-2 text-gray-950">
+            {groceryTitle?.title}
           </span>
+          { groceryTitle?.subtitle && <span className="lg:text-base text-xs md:text-sm pt-1 font-extralight px-2 text-gray-500">
+            {groceryTitle?.subtitle}
+          </span>}
+          </div>
           {groceryTitle && (
             <Link to={"/groceryCollection/" + groceryList?.collectionId}>
               <span className="lg:text-sm text-xs md:text-sm font-bold text-orange-600 cursor-pointer">
