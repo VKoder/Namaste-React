@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { CORS_API } from "../Utils/constants";
-import GroceryCard from "./GroceryCard";
-import { Link } from "react-router-dom";
+import { CARD_IMG_URL } from "../Utils/constants";
 
 const GroceryTopCarousal = () => {
   const [groceryList, setgroceryList] = useState(null);
@@ -17,31 +16,26 @@ const GroceryTopCarousal = () => {
         "https://www.swiggy.com/api/instamart/home?pageNo=1&layoutId=3173&storeId=1383574&clientId=INSTAMART-APP"
     );
     const json = await data.json();
-    setgroceryList(json?.data?.widgets?.[3]);
-    setgroceryTitle(json?.data?.widgets?.[3]?.widgetInfo?.title);
+
+    setgroceryList(json?.data?.widgets?.[1]?.data)
+    setgroceryTitle(json?.data?.widgets?.[1]?.widgetInfo?.title)
   };
 
   return (
-    <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">
-      <div className="flex justify-between items-center flex-row">
-        <span className="lg:text-xl text-lg md:text-xl font-extrabold px-2 text-gray-950">
+    <div className="flex justify-center items-start flex-col lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">
+     <span className="lg:text-xl text-lg md:text-xl items-start font-extrabold text-gray-950">
           {groceryTitle}
         </span>
-        {groceryTitle && (
-          <Link to={"/groceryCollection/" + groceryList?.collectionId}>
-            <span className="lg:text-sm text-xs md:text-sm font-bold text-orange-600 cursor-pointer">
-              See All
-            </span>
-          </Link>
-        )}
-      </div>
-      <div className="slider__content mt-4">
-        {groceryList?.data?.map((grocery) => (
-          <Link to={"/groceryInfo/" + grocery.product_id}>
-            <GroceryCard key={grocery.product_id} groceryData={grocery} />
-          </Link>
-        ))}
-      </div>
+    <div className="flex justify-evenly items-center w-full">
+        
+        {
+            groceryList?.map((gros)=> 
+                <div>
+                    <img className="w-24" src={CARD_IMG_URL + gros.creativeId}></img>
+                </div>
+            )
+        }
+    </div>
     </div>
   );
 };
