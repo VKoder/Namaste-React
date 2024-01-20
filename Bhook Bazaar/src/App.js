@@ -16,6 +16,7 @@ import Grocery from "./Grocery/Grocery";
 import MenuFooter from "./Components/MenuFooter";
 import Cart from "./Components/Cart";
 import GroceryData from "./Grocery/GroceryData";
+import GroceryCollection from "./Grocery/GroceryCollection";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -87,11 +88,17 @@ const appRouter = createBrowserRouter([
         element: <Grocery />,
       },
       {
+        path: "/groceryCollection/:id",
+        element: <GroceryCollection />,
+      },
+      {
         path: "/groceryInfo/:id",
         element: <GroceryData />,
       },
+     
     ],
   },
+ 
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);

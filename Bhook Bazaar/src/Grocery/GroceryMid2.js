@@ -17,8 +17,8 @@ const GroceryMid = () => {
         "https://www.swiggy.com/api/instamart/home?pageNo=1&layoutId=3173&storeId=1383574&clientId=INSTAMART-APP"
     );
     const json = await data.json();
-    setgroceryList(json?.data?.widgets?.[4]);
-    setgroceryTitle(json?.data?.widgets?.[4]?.widgetInfo?.title);
+    setgroceryList(json?.data?.widgets?.[2]);
+    setgroceryTitle(json?.data?.widgets?.[2]?.widgetInfo?.title);
   };
 
   return (

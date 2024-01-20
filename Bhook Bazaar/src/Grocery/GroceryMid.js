@@ -17,14 +17,14 @@ const GroceryMid = () => {
         "https://www.swiggy.com/api/instamart/home?pageNo=1&layoutId=3173&storeId=1383574&clientId=INSTAMART-APP"
     );
     const json = await data.json();
-    setgroceryList(json?.data?.widgets?.[4]);
-    setgroceryTitle(json?.data?.widgets?.[4]?.widgetInfo?.title);
+    setgroceryList(json?.data?.widgets?.[3]);
+    setgroceryTitle(json?.data?.widgets?.[3]?.widgetInfo?.title);
   };
 
   return (
     <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">
       <div className="flex justify-between items-center flex-row">
-      <span className="lg:text-xl text-lg md:text-xl font-extrabold px-2 text-gray-950">
+        <span className="lg:text-xl text-lg md:text-xl font-extrabold px-2 text-gray-950">
           {groceryTitle}
         </span>
         {groceryTitle && (

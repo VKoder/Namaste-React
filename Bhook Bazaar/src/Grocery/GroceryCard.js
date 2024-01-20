@@ -8,7 +8,7 @@ const GroceryCard = (props) => {
   const {product_description } =groceryData?.variations?.[0]?.price?.offer_applied
 
   return (
-    <div className="flex justify-center items-center flex-col w-[230px] p-2">
+    <div className="flex justify-center items-center flex-col w-[160px] p-2">
       <div className="border-spacing-1 border rounded-md w-full relative overflow-hidden">
         <img className="w-full h-[130px]" src={CARD_IMG_URL + images[0]}></img>
         { product_description && <div className="absolute top-[-24] left-[-2] ">

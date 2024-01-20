@@ -1,3 +1,4 @@
+
 import { CARD_IMG_URL } from "../Utils/constants";
 
 export  const Carousal0 = (props) => {
@@ -26,5 +27,4 @@ export  const Carousal1 = (props) => {
     </div>
   );
 };
-
 
