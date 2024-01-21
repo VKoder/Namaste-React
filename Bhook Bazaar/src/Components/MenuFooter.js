@@ -5,12 +5,11 @@ const MenuFooter = () => {
   const linkCss =
     "text-gray-600 flex  justify-center items-center flex-col  hover:text-orange-300";
 
-   
   return (
     <div className="w-full flex justify-evenly items-center fixed bottom-0 z-10 flex-row bg-white lg:hidden py-1 px-2 shadow-lg lg:shadow-xl">
       <Link to={"/"}>
         <div className={linkCss}>
-        <i className="ri-home-4-line text-xl font-bold"></i>
+          <i className="ri-home-4-line text-xl font-bold"></i>
           <span className={spanCsss}>Home</span>
         </div>
       </Link>

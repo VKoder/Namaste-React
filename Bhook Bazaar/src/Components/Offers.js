@@ -6,6 +6,7 @@ import useOnlineStatus from "../Utils/useOnlineStatus";
 import { CORS_API } from "../Utils/constants";
 import { REST_API } from "../Utils/constants";
 import CuisinesCards from "./CuisinesCards";
+import SomethingWrong from "../Utils/SomethingWrong";
 
 
 // HERO COMPONENT
@@ -49,7 +50,7 @@ const Offers = () => {
   }
 
   if (filteredRestList === undefined) {
-    return <h1>Something went wrg</h1>
+    return <SomethingWrong/>;
   }
 
   const filterBtnCss = "bg-transparent border-2 shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"

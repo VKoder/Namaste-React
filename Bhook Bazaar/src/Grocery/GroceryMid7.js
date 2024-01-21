@@ -26,6 +26,10 @@ const GroceryMid7 = () => {
     return <GroceryShimmer />;
   }
 
+  if (groceryList === undefined) {
+    return <GroceryShimmer />;
+  }
+  
   return (
     <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle} />
     )

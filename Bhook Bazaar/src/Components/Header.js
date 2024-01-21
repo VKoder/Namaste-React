@@ -35,7 +35,7 @@ const fetchData = async()=>{
         <div className="rounded-sm py-5 ">
           <Link to="/">
             <img
-              className="w-10 hover:w-10 sm:w-12 md:w-[55px] lg:w-[65px] xl:w-[70px] duration-200 ease-in"
+              className="w-10  sm:w-12 md:w-[55px] lg:w-[65px] xl:w-[70px] duration-200 ease-in"
               src={logo}
               alt="Logo"
             />

@@ -18,6 +18,7 @@ import Cart from "./Components/Cart";
 import GroceryData from "./Grocery/GroceryData";
 import GroceryCollection from "./Grocery/GroceryCollection";
 import GroceryShop from "./Grocery/GroceryShop";
+import LoadingScreen from "./Utils/LoadingScreen";
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -55,7 +56,7 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: (
           //Suspence is used to make react wait till our component is loading or mounting it takes fallback prop to display something eg: shimmer ui
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<LoadingScreen/>}>
             <About />
           </Suspense>
         ),
@@ -63,7 +64,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<LoadingScreen/>}>
             <Contact />
           </Suspense>
         ),

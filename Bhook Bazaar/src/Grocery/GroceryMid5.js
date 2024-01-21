@@ -25,6 +25,9 @@ const GroceryMid5 = () => {
   if (groceryList === null) {
     return <GroceryShimmer />;
   }
+  if (groceryList === undefined) {
+    return <GroceryShimmer />;
+  }
 
   return (
     <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle} />
