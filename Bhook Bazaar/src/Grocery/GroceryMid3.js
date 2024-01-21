@@ -23,11 +23,13 @@ const GroceryMid3 = () => {
   };
 
   if (groceryList === null) {
-    return <GroceryShimmer/>
+    return <GroceryShimmer />;
   }
 
+
+
   return (
-    <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle}/>
-  );
+    <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle} />
+    )
 };
 export default GroceryMid3;

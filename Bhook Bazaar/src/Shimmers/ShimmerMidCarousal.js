@@ -1,6 +1,6 @@
 const ShimmerMidCarousal = () => {
     return (
-        <div className="flex flex-row justify-center items-center m-auto gap-10 my-12 px-16 w-max">
+        <div className="flex flex-row justify-center items-center m-auto gap-10 mt-24 px-16 w-max">
             <div className="bg-gray-200 h-24 w-24 lg:h-36 lg:w-36 rounded-full relative"> <div className="bg-gray-100 absolute left-2 top-2  h-20 w-20 lg:h-32 lg:w-32  stroke animate rounded-full"></div></div>
             <div className="bg-gray-200 h-24 w-24 lg:h-36 lg:w-36 rounded-full relative"> <div className="bg-gray-100 absolute left-2 top-2  h-20 w-20 lg:h-32 lg:w-32  stroke animate rounded-full"></div></div>
             <div className="bg-gray-200 h-24 w-24 lg:h-36 lg:w-36 rounded-full relative"> <div className="bg-gray-100 absolute left-2 top-2  h-20 w-20 lg:h-32 lg:w-32  stroke animate rounded-full"></div></div>

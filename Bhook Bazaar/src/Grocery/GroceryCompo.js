@@ -4,7 +4,7 @@ import GroceryCard from "./GroceryCard";
 const GroceryCompo = ({groceryList, groceryTitle}) => {
     
     return (
-        <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">
+        <div className="slider lg:px-16 lg:my-5 md:px-16 md:my-3 w-full lg:pt-3 md:pt-3">
         <div className="flex justify-between items-center flex-row">
           <div className="flex justify-start items-start flex-col">
             <span className="lg:text-xl text-base sm:text-lg md:text-xl font-extrabold px-2 text-gray-950">

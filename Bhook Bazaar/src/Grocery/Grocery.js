@@ -12,7 +12,7 @@ import GroceryCategory from "./GroceryCategory";
 const Grocery = () => {
   return (
     <div className="">
-      <div>
+      <div className="pb-3 lg:pb-2 md:pb-2">
         <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/rng/md/carousel/production/a313fb171d73e211fe359175f6f387e6"></img>
       </div>
       <GroceryMid7 />
@@ -23,7 +23,8 @@ const Grocery = () => {
       <GroceryTop />
       <GroceryMid />
       <GroceryMid2 />
-      <GroceryMid4 />{/* <GroceryMid6 /> */}
+      <GroceryMid4 />
+      {/* <GroceryMid6 /> */}
     </div>
   );
 };

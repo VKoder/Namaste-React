@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
 
       <div className="flex justify-start items-center flex-row gap-1 auto overflow-x-scroll lg:space-x-4 lg:p-4 md:space-x-4 md:p-4 space-x-2 p-2">
         {restOff.map((off) => (
-          <OfferCard offdata={off} key={off?.info?.description}  />
+          <OfferCard offdata={off} key={off?.info?.offerIds?.[0]}  />
         ))}
        
       </div>

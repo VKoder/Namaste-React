@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { CORS_API } from "../Utils/constants";
 import { GROCERY_INFO_API } from "../Utils/constants";
 import { CARD_IMG_URL } from "../Utils/constants";
+import GroceryShimmerData from "./GroceryShimmerData";
 
 const GroceryData = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const GroceryData = () => {
   };
 
   if (groceryInfo === null) {
-    return <h1>hdshlh</h1>;
+    return <GroceryShimmerData/>
   }
 
   const { disclaimer, long_description } = groceryInfo?.variations?.[0]?.meta;
@@ -33,7 +34,13 @@ const GroceryData = () => {
     groceryInfo?.variations?.[0]?.price?.offer_applied;
 
   return (
-    <div className="lg:mx-36 md:mx-10 mx-0 bg-gray-200 px-2 py-2 rounded-lg my-4 relative ">
+    <div>
+    <div className="fixed text-left rounded-b-lg shadow-lg top-0 w-full z-20 bg-white lg:px-36 px-6 md:px-20 lg:py-5 md:py-4 py-2">
+      <Link to={"/grocery"}><span className="lg:text-2xl md:text-xl text-lg cursor-pointer hover:text-orange-400 lg:pr-3 pr-2 md:pr-3 text-gray-800"><i class="ri-arrow-left-line"></i></span></Link>
+    <span className="lg:text-xl md:text-xl text-lg font-bold  text-gray-800">{product_name_without_brand}</span>
+  </div>
+    <div className="lg:mx-36 md:mx-10 mx-0 bg-gray-200 lg:mt-24 md:mt-[82px] mt-12 px-2 py-2 rounded-lg my-4 relative ">
+     
       {product_description && (
         <div className="absolute z-10 top-5 left-5 ">
           <img
@@ -53,7 +60,7 @@ const GroceryData = () => {
       <div className="flex bg-white rounded-xl mb-2 justify-center items-center overflow-hidden flex-col py-4 p-2">
         <div className="rounded-md lg:w-[500px] md:w-[500px] w-[300px] relative overflow-hidden">
           <img
-            className="w-full lg:h-[560px] md:h-[560px] h-[350px]" 
+            className="w-full lg:h-[560px] md:h-[560px] h-[350px]"
             src={CARD_IMG_URL + images[0]}
           ></img>
         </div>
@@ -100,13 +107,14 @@ const GroceryData = () => {
             </span>
           </div>
         )}
-    <div className=" lg:py-6 py-3 md:py-6  flex justify-center items-start flex-col">
-        <span className="lg:text-base text-sm md:text-base text-gray-600 font-light pb-2">
-          Important Information
-        </span>
-        <span className="text-sm text-gray-400 font-thin">{disclaimer}</span>
+        <div className=" lg:py-6 py-3 md:py-6  flex justify-center items-start flex-col">
+          <span className="lg:text-base text-sm md:text-base text-gray-600 font-light pb-2">
+            Important Information
+          </span>
+          <span className="text-sm text-gray-400 font-thin">{disclaimer}</span>
         </div>
       </div>
+    </div>
     </div>
   );
 };

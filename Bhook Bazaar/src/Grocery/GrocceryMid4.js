@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CORS_API } from "../Utils/constants";
 import GroceryCompo from "./GroceryCompo";
+import GroceryShimmer from "./GroceryShimmer";
 
 const GroceryMid4 = () => {
   const [groceryList, setgroceryList] = useState(null);
@@ -21,8 +22,12 @@ const GroceryMid4 = () => {
     setgroceryTitle(json?.data?.widgets?.[2]?.widgetInfo);
   };
 
+  if (groceryList === null) {
+    return <GroceryShimmer />;
+  }
+
   return (
-    <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle}/>
-  );
+    <GroceryCompo groceryList={groceryList} groceryTitle={groceryTitle} />
+    )
 };
 export default GroceryMid4;

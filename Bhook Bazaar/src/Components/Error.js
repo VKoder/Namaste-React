@@ -1,10 +1,13 @@
 import { useRouteError } from "react-router-dom";
+import error from "../Images/404.svg"
+
 const Error = () => {
     const err = useRouteError()
-    console.log(err)
+    
     return (
         <div className="error">
-            <h1>Heyy I am error</h1>
+<img src={error}></img>
+<span>{err}</span>
         </div>
     )
 }

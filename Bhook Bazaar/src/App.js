@@ -92,17 +92,17 @@ const appRouter = createBrowserRouter([
         path: "/groceryCollection/:id",
         element: <GroceryCollection />,
       },
-      {
-        path: "/groceryInfo/:id",
-        element: <GroceryData />,
-      },
+
       {
         path: "/groceryshop/:id",
         element: <GroceryShop />,
       },
     ],
   },
- 
+  {
+    path: "/groceryInfo/:id",
+    element: <GroceryData />,
+  },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);

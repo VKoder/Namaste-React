@@ -46,8 +46,8 @@ const RestaurantHeader = ({ restInfo }) => {
             {avgRating}
           </span>
           <span
-            style={{ letterSpacing: -1, wordSpacing: 1 }}
-            className="border-t  text-xs font-semibold text-gray-400  py-1 "
+            style={{  wordSpacing: 1 }}
+            className="border-t tracking-tighter text-center lg:text-xs text-[9px] md:text-xs font-semibold text-gray-400  py-1 "
           >
             {totalRatingsString}
           </span>
