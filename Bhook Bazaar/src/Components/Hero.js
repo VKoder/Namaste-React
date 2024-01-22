@@ -17,6 +17,7 @@ const Hero = () => {
   const [searchTxt, setsearchTxt] = useState("");
   const [filter, setfilter] = useState(false);
 
+  //custom hook
   const OnlineStatus = useOnlineStatus();
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const Hero = () => {
     setbestrest(json?.data?.cards[6]?.card?.card);
   };
 
+  //for small devices
   const filterToggle = () => {
     setfilter(!filter);
   };
@@ -76,47 +78,47 @@ const Hero = () => {
             className="bg-transparent border-2 sm:hidden shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
             onClick={filterToggle}
           >
-            <i class="ri-equalizer-fill"></i>
+            {filter ? (
+              <i class="ri-equalizer-fill"></i>
+            ) : (
+              <i class="ri-search-line"></i>
+            )}
           </button>
-          {filter && (
-            <div className="absolute top-40 rounded-lg bg-white shadow-sm border-l-2 py-3 px-2 z-10 border-orange-400">
-              <div className="flex justify-start items-start flex-col">
-                <span>Pizza</span>
-                <span>Dominos</span>
-              </div>
+          {!filter && (
+            <div>
+              <button
+                className={filterBtnCss}
+                onClick={() => {
+                  setfilteredRestList(restaurantList);
+                }}
+              >
+                All
+              </button>
+              <button
+                className={filterBtnCss}
+                onClick={() => {
+                  const TopRated = restaurantList.filter(
+                    (rest) => rest.info.avgRating > 4.2
+                  );
+                  setfilteredRestList(TopRated);
+                }}
+              >
+                Top Rated
+              </button>
+              <button
+                className={filterBtnCss}
+                onClick={() => {
+                  const isVeg = restaurantList.filter(
+                    (rest) => rest.info.veg === true
+                  );
+                  setfilteredRestList(isVeg);
+                }}
+              >
+                Pure Veg
+              </button>
             </div>
           )}
 
-          <button
-            className={filterBtnCss}
-            onClick={() => {
-              setfilteredRestList(restaurantList);
-            }}
-          >
-            All
-          </button>
-          <button
-            className={filterBtnCss}
-            onClick={() => {
-              const TopRated = restaurantList.filter(
-                (rest) => rest.info.avgRating > 4.2
-              );
-              setfilteredRestList(TopRated);
-            }}
-          >
-            Top Rated
-          </button>
-          <button
-            className={filterBtnCss}
-            onClick={() => {
-              const isVeg = restaurantList.filter(
-                (rest) => rest.info.veg === true
-              );
-              setfilteredRestList(isVeg);
-            }}
-          >
-            Pure Veg
-          </button>
           {/* bg-transparent border-2 shadow-md border-solid border-zinc-300 px-3.5 py-1.5 rounded-3xl mr-4 md:px-3 md:py-1 md:mr-3 md:text-xs lg:px-3.5 lg:py-1.5 lg:mr-4 lg:text-sm */}
           <button
             className="bg-transparent border-2 hidden sm:flex shadow-md border-solid border-zinc-300 px-2 text-xs lg:text-base lg:px-3.5 py-1 lg:py-1.5 rounded-2xl lg:rounded-3xl mr-2 lg:mr-4"
@@ -136,28 +138,30 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="hidden sm:flex">
-          <input
-            type="text"
-            placeholder="Feeling Hungry?"
-            className="lg:py-3 lg:pr-24 md:pr-10 lg:pl-5 rounded-3xl lg:text-sm py-1 pr-16 pl-2 text-xs border-2 border-gray-300  "
-            value={searchTxt}
-            onChange={(e) => {
-              setsearchTxt(e.target.value);
-            }}
-          ></input>
-          <button
-            className="lg:py-3 lg:px-6 py-1 px-2 border-none rounded-3xl lg:text-base text-sm font-bold cursor-pointer bg-orange-400"
-            onClick={() => {
-              let filterSearch = restaurantList.filter((rest) =>
-                rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
-              );
-              setfilteredRestList(filterSearch);
-            }}
-          >
-            Search
-          </button>
-        </div>
+        {filter && (
+          <div className="">
+            <input
+              type="text"
+              placeholder="Feeling Hungry?"
+              className="lg:py-3 lg:pr-24 md:pr-10 lg:pl-5 rounded-3xl lg:text-sm py-1 pr-16 pl-2 text-xs border-2 border-gray-300  "
+              value={searchTxt}
+              onChange={(e) => {
+                setsearchTxt(e.target.value);
+              }}
+            ></input>
+            <button
+              className="lg:py-3 lg:px-6 py-1 px-2 border-none rounded-3xl lg:text-base text-sm font-bold cursor-pointer bg-orange-400"
+              onClick={() => {
+                let filterSearch = restaurantList.filter((rest) =>
+                  rest.info.name.toLowerCase().includes(searchTxt.toLowerCase())
+                );
+                setfilteredRestList(filterSearch);
+              }}
+            >
+              Search
+            </button>
+          </div>
+        )}
       </div>
       <div className="flex justify-center lg:justify-start items-center  flex-wrap gap-7 my-2 px-12 mt-12 ">
         {

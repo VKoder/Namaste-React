@@ -1,9 +1,8 @@
-import {  useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import logo from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { CORS_API } from "../Utils/constants";
-import grocerylogo from "../Images/Grocery.png"
+import grocerylogo from "../Images/Grocery.png";
 
 // HEADER COMPONENT
 const Header = () => {
@@ -14,21 +13,8 @@ const Header = () => {
     setmenu(!menu);
   };
 
-  const searchToggle = () => {
-    setSearch(!Search)
-  }
-
-  const spanCsss = "pr-12 lg:pr-6 lg:text-sm xl:pr-12 xl:text-base font-bold"
-  const linkCss = "  text-gray-600 hover:text-orange-300"
-
-  useEffect(()=>{
-    fetchData()
-})
-const fetchData = async()=>{
-    const data = await fetch(CORS_API + "https://www.swiggy.com/api/instamart/campaign/mxn?layoutId=2586&limit=40&pageNo=1&serviceLine=INSTAMART&customerPage=STORES_MxN_18&storeId=1383574")
-          const json = await data.json()
-    console.log(json)
-}
+  const spanCsss = "pr-12 lg:pr-6 lg:text-sm xl:pr-12 xl:text-base font-bold";
+  const linkCss = "  text-gray-600 hover:text-orange-300";
 
   return (
     <div className="flex flex-col justify-center mb-16 sm:mb-20 md:mb-20 lg:mb-24 xl:mb-24">
@@ -69,26 +55,38 @@ const fetchData = async()=>{
               <Link to={"/cart"}>
                 <div className={linkCss}>
                   <i class="ri-shopping-cart-2-line lg:text-base lg:pr-1 lg:font-semibold text-lg pr-2 font-bold  "></i>
-                  <span className={spanCsss}>
-                    Cart ({cartItems.length})
-                  </span>
+                  <span className={spanCsss}>Cart ({cartItems.length})</span>
                 </div>
               </Link>
               <Link to={"/grocery"}>
                 <div className="">
-                <img className="w-40  " src={grocerylogo}></img>
+                  <img className="w-40  " src={grocerylogo}></img>
                 </div>
               </Link>
             </ul>
           </div>
           <div className="lg:hidden">
-            {menu ? <button onClick={handlemenu}><i class="ri-close-fill text-xl font-bold"></i></button> : <button onClick={handlemenu}><i class="ri-menu-line text-xl font-bold"></i></button>}
+            {menu ? (
+              <button onClick={handlemenu}>
+                <i class="ri-close-fill text-xl font-bold"></i>
+              </button>
+            ) : (
+              <button onClick={handlemenu}>
+                <i class="ri-menu-line text-xl font-bold"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>
       {menu && (
-        <div className="bg-gray-200 ">
-          <div className="py-20 w-full m-auto text-center">Currently Dummy Data</div>
+        <div className="">
+          <div className="pt-20 w-full mx-auto items-center">
+            <Link to={"/grocery"}>
+              <div className="mx-auto w-full" onClick={handlemenu}>
+                <img className="w-40  " src={grocerylogo}></img>
+              </div>
+            </Link>
+          </div>
         </div>
       )}
     </div>

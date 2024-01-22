@@ -13,10 +13,6 @@ const RestaurantHeader = ({ restInfo }) => {
     totalRatingsString,
   } = restInfo;
   const { slaString, lastMileTravelString } = restInfo.sla;
-
-
-
-
   return (
     <div>
       <div className="flex justify-between items-center flex-row  border-b-2 border-dotted lg:py-4 md:py-4 py-2">

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { CORS_API } from "../Utils/constants";
 import GroceryCard from "./GroceryCard";
 import { Link, useParams } from "react-router-dom";
+import SomethingWrong from "../Utils/SomethingWrong";
+import WorkOnProgress from "../Utils/WorkOnProgress";
 
 const GroceryShop = () => {
   const [groceryList, setgroceryList] = useState(null);
@@ -17,9 +19,16 @@ const GroceryShop = () => {
       CORS_API +
       "https://www.swiggy.com/api/" + id)
     const json = await data.json();
-    console.log(json)
+   groceryList(json)
     
   };
+
+  if (groceryList === undefined) {
+    return <SomethingWrong/>
+  }
+  if (groceryList === null) {
+    return <WorkOnProgress/>
+  }
 
   return (
     <div className="slider lg:px-16 lg:my-10 md:px-16 my-3 md:my-5 w-full pt-3">

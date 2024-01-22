@@ -34,7 +34,6 @@
   width: 92%;
   max-width: 1280px;
   margin: 0 auto;
-  
 }
 .slider__content {
   overflow-x: scroll;
@@ -112,14 +111,12 @@
   }
 }
 @media (min-width: 600px) {
-
   .slider__item2 {
     min-width: calc((30% / 1) - 3rem);
   }
 }
 
 @media (min-width: 940px) {
-
   .slider__item2 {
     min-width: calc((16% / 1) - 3rem);
   }

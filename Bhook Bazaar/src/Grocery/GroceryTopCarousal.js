@@ -39,7 +39,7 @@ const GroceryTopCarousal = () => {
         {groceryList?.map((gros) => (
           <div>
             {
-              <Link to={"/groceryShop/" + gros?.entityId} >
+              <Link to={"/groceryShop/" + gros?.id} >
                 <img
                   className="lg:w-24 sm:w-20 w-14 md:w-24"
                   src={CARD_IMG_URL + gros.creativeId}

@@ -42,7 +42,6 @@ const MidCarousal = () => {
     return <ShimmerMidCarousal />;
   }
 
-
   return (
     carausal1data && (
       <div
