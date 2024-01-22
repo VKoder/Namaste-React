@@ -12,16 +12,18 @@ import { Provider } from "react-redux";
 import appStore from "./Redux Store/appStore";
 import Offers from "./Components/Offers";
 import Footer from "./Components/Footer";
-import Grocery from "./Grocery/Grocery";
 import MenuFooter from "./Components/MenuFooter";
 import Cart from "./Components/Cart";
-import GroceryData from "./Grocery/GroceryData";
 import GroceryCollection from "./Grocery/GroceryCollection";
 import GroceryShop from "./Grocery/GroceryShop";
 import LoadingScreen from "./Utils/LoadingScreen";
+import GroceryData from "./Grocery/GroceryData";
+
 
 const About = lazy(() => import("./Components/About"));
 const Contact = lazy(() => import("./Components/Contact"));
+const Grocery = lazy(() => import("./Grocery/Grocery"));
+
 
 const AppLayout = () => (
   <Provider store={appStore}>
@@ -56,7 +58,7 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: (
           //Suspence is used to make react wait till our component is loading or mounting it takes fallback prop to display something eg: shimmer ui
-          <Suspense fallback={<LoadingScreen/>}>
+          <Suspense fallback={<LoadingScreen />}>
             <About />
           </Suspense>
         ),
@@ -64,7 +66,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: (
-          <Suspense fallback={<LoadingScreen/>}>
+          <Suspense fallback={<LoadingScreen />}>
             <Contact />
           </Suspense>
         ),
@@ -87,7 +89,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Grocery />,
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/groceryCollection/:id",
@@ -100,9 +106,10 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
+  
   {
     path: "/groceryInfo/:id",
-    element: <GroceryData />,
+    element: <GroceryData/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

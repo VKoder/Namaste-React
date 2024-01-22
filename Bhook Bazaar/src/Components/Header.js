@@ -3,6 +3,7 @@ import logo from "../Images/Logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CORS_API } from "../Utils/constants";
+import grocerylogo from "../Images/Grocery.png"
 
 // HEADER COMPONENT
 const Header = () => {
@@ -35,7 +36,7 @@ const fetchData = async()=>{
         <div className="rounded-sm py-5 ">
           <Link to="/">
             <img
-              className="w-10  sm:w-12 md:w-[55px] lg:w-[65px] xl:w-[70px] duration-200 ease-in"
+              className="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-30 duration-200 ease-in"
               src={logo}
               alt="Logo"
             />
@@ -74,9 +75,8 @@ const fetchData = async()=>{
                 </div>
               </Link>
               <Link to={"/grocery"}>
-                <div className={linkCss}>
-                  <i class="ri-shopping-cart-2-line lg:text-base lg:pr-1 lg:font-semibold text-lg pr-2 font-bold  "></i>
-                  <span className={spanCsss}>Grocery </span>
+                <div className="">
+                <img className="w-40  " src={grocerylogo}></img>
                 </div>
               </Link>
             </ul>

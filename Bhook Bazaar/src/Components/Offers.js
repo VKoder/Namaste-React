@@ -57,7 +57,9 @@ const Offers = () => {
   const linksCss = "lg:text-[10px] md:text-[10px] text-[8px] text-gray-400 font-bold pr-1"
  
   return (
+
     <div className="flex justify-between items-center  flex-col lg:px-16 lg:my-10 md:px-16 px-6 my-8 md:my-10 w-full ">
+      <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_156,w_1000/rng/md/carousel/production/54e91b82d0c8111e14fe786bcf28ff1c"></img>
       <div className="lg:w-full lg:px-12 md:w-full md:px-12 w-full  text-left mx-auto lg:pt-5 md:pt-4 pt-2">
         <Link to={"/"}><span className={linksCss}>Home</span></Link>
         <span className={linksCss}>/</span> 

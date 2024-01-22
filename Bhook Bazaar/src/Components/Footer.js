@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex justify-center items-start lg:px-12  md:px-12 px-4 lg:flex-row md:flex-row flex-row bg-black lg:gap-10 md:gap-10 gap-16 lg:w-12/12 md:w-12/12 w-12/12 lg:py-16 md:py-16 py-10 pb-20 flex-wrap">
             <div className=" lg:w-3/12 w-4/12 md:w-3/12 ">
                 <div className="flex justify-center items-center flex-col gap-2">
-                <img className="lg:w-40 w-20 md:w-40" src={logo}></img><span className="font-extrabold lg:text-lg md:text-lg text-base text-gray-50 tracking-wide">Foody Hub</span>
+                <img className="lg:w-40 w-20 rounded-3xl md:w-40" src={logo}></img><span className="font-extrabold lg:text-lg md:text-lg text-base text-gray-50 tracking-wide">Foody Hub</span>
                 <span className={LiCss}>©2024 Technologies Pvt. Ltd</span>
                 </div>
             </div>
